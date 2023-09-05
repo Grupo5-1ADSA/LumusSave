@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="align-items: center; justify-content: center; display: flex;">
+    <div style="display: flex; align-items: center; justify-content: center; flex-direction: column; border-radius: 30px; border-color: black; border: solid; align-self: center; width: 500px; height: 600px; ">
+        <h4 style="text-align: center;">Calcule o quanto você economizará anualmente na conta de luz utilizando o gerenciamento do nosso sensor</h4>
+        <br>
+        Quantidade de lâmpadas:
+        <input type="text" id="qtd_lampada">
+        <br>
+        Potência da lâmpada:
+        <input type="text" id="watts_consumido" placeholder="9(w)">
+        <br>
+        <h5>Horario de funcionamento do seu escritório</h5>
+        
+        <div style="display: flex; flex-direction: row;">
+        <p>Abertura:</p>
+        <input type="number" min="0" max="23" id="horario_abertura" placeholder="00/23">
+        <p>Fechamento:</p>
+        <input type="number" min="0" max="23" id="horario_fechamento" placeholder="00/23">
+        </div>
+        <br>
+        <button onclick="calcularConsumo()" style="margin: 20px;">Calcular</button>
+        <div id="resultado" style="text-align: center; font-size: 20px; margin-top: 40px;"></div>
+    </div>
+    </div>
+</body>
+<script>
+    function calcularConsumo(){
+
+        // LENDO O VALOR ATRIBUIDO PELO USUARIO EM CADA INPUT
+        var quantidadelampada = Number(qtd_lampada.value);
+        var watts = Number(watts_consumido.value);
+        var abertura = Number(horario_abertura.value);
+        var fechamento = Number(horario_fechamento.value);
+
+        // VENDO O TEMPO TOTAL DE FUNCIONAMENTO DA EMPRESA 
+        var tempoFuncionamento = fechamento - abertura;
+
+        // VENDO QUANTO DESSE TEMPO TOTAL É CONSIDERADO DIA E QUANTO TEMPO É NOITE 
+        // OBS: ESTAMOS LEVANDO EM CONSIDERAÇÃO QUE DAS 6H-17H É "DIA" POIS TEM A LUZ DO SOLE É NESSE MOMENTO QUE VAMOS MAIS ECONOMIZAR 
+        var funcionamentoNoite = fechamento - 17; 
+        var funcionamentoDia= 17 - abertura;
+
+        // VENDO A PORCENTAGEM DE FUNCIONAMENTO QUE CORRESPONDE O DIA E A NOITE 
+        var porcentagemDia = funcionamentoDia * 100/ tempoFuncionamento;
+        var porcentagemNoite = funcionamentoNoite * 100/ tempoFuncionamento;
+
+        // VENDO QUANTOS WATTS SÃO CONSUMIDOS NO TOTAL
+        // EX: TENHO 6 LAMPADAS DE 10 WATTS, ENTÃO O CONSUMO É DE 60 WATTS
+        var wattPLampada = quantidadelampada * watts;
+        // O CALCULO ACIMA DESCOBRE O CONSUMO DE WATTS EM 1 HORA
+        // PRECISAMOS DESCOBRIR O KWH NO INTERVALO ENTRE A ABERTURA ATÉ 17H
+        // A VARIAVEL DE KWH DO DIA RECEBE OS WATTS DE TODAS AS LAMPADAS / 1000 * O TEMPO DE FUNCIONAMENTO DURANTE O DIA 
+        // E PARA DECOBRIR O VALOR, FAZEMOS 0.98 QUE É O VALOR DA TARIFA
+        var kwHDia = ((wattPLampada / 1000)* funcionamentoDia) * 0.98 ;
+        // VENDO O QUANTO É GASTO EM 1 AN0
+        // 1 ANO TEM 254 DIAS ÚTEIS
+        var kwHAno = kwHDia * 254; 
+        
+        // 50% DE ECONOMIA EM RELAÇÃO AO TEMPO DE FUNCIONAMENTO DURANTE O DIA 
+        // EX: O ESCRITORIO FUNCIONA 10 HORAS. DESSAS 10 HORAS, 8 HORAS SÃO "DIA" ENTÃO ELE ECONOMIZA 50% APENAS NESSAS 8 HORAS, NAS OUTRAS DUAS HORAS ELE PAGA O VALOR NORMAL
+        var porcentagem= kwHAno * 0.50 ;
+        var economia = kwHAno - porcentagem;
+        
+        var dinheiroFormatado = economia.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+
+        resultado.innerHTML = `Tempo de funcionamento: ${tempoFuncionamento}h
+        <br> Com a nossa ferramenta você economizará 50% dos gastos em ${porcentagemDia.toFixed(2)}% desse tempo (${funcionamentoDia}h).
+        <br>Gerando assim  uma economia de: <b style="color:green">${dinheiroFormatado}</b> anual.
+        `
+    }
+</script>
+</html>
