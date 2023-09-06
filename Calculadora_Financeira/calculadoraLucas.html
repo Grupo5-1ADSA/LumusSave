@@ -58,7 +58,7 @@
             var hrTotal = Number(hrFechamento - hrAbertura);  // Horário total de funcionamento da empresa
 
             var HrDuranteDia = Number(0);  // Será o horário total que a empresa fica aberta durante o dia
-            var HrDuranteNoite = Number(0); // Será o oposto
+            var HrDuranteNoite = Number(0); // Será o horário total que a empresa fica aberta durante a noite
             
             var hrInicioDia = 7;
             var hrTerminoDia = 17;
@@ -68,22 +68,22 @@
 
                 if(hrAbertura <= hrInicioDia){
                     if(hrFechamento >= hrTerminoDia){
-                        HrDuranteDia = hrTerminoDia - hrInicioDia;
+                        HrDuranteDia = hrTerminoDia - hrInicioDia;  // se expediente começar antes das 8 e terminar dps 16 = HrDuranteDia = 17-7
                     }
                 }
                 if(hrAbertura >= hrInicioDia){
                     if(hrFechamento <= hrTerminoDia){
-                        HrDuranteDia = hrFechamento - hrAbertura;
+                        HrDuranteDia = hrFechamento - hrAbertura; // se expediente começar depois das 7 e terminar antes das 17 
                     }
                 }
                 if(hrAbertura <= hrInicioDia){
                     if(hrFechamento <= hrTerminoDia){
-                        HrDuranteDia = hrFechamento - hrInicioDia;
+                        HrDuranteDia = hrFechamento - hrInicioDia; // se expediente começar antes das 7 e terminar antes das 17 = HrDuranteDia = fim do expediente - 7
                     }
                 }
                 if(hrAbertura >= hrInicioDia){
                     if(hrFechamento >= hrTerminoDia){
-                        HrDuranteDia = hrTerminoDia - hrAbertura;
+                        HrDuranteDia = hrTerminoDia - hrAbertura; // se expediente começar depois das 7 e terminar dps 17 = HrDuranteDia = 17 - inicio expediente
                     }
                 }
 
@@ -94,7 +94,7 @@
             }
             
             var kWhDiario = (30 * qntLampadas * hrTotal) / 1000; // Uso diário de kWh da empresa 30 = watts
-
+            
             var kWhMensal = kWhDiario * 26 ;
 
             var gastoMensal = kWhMensal * 0.85; // 0.85 custo do kWh para empresas

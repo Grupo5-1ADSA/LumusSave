@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Calcule o quanto você economizará na conta de luz utilizando o monitoramento do nosso sensor</h2>
+    <div class="principal">
+
+        Quantidade de lâmpadas:
+        <input type="text" id="qtd_lampada" placeholder="50" min="1">
+        <br>
+
+        Potência da lâmpada:
+
+            <input type="text" id="watts_consumido" placeholder="10w">
+            <div style="display: flex; align-items: center;">
+                <input style="margin: 2px; width: 40px;" type="radio" value="30" id="verWatt"> <span style="font-size: 20px;">Não sei</span>
+            </div>
+            
+
+        <br>
+
+        <h5>Horario de funcionamento do seu escritório</h5>
+        
+        Abertura:
+        <input type="number" min="0" max="23" id="hrAbertura_input" placeholder="00/23">
+        Fechamento:
+        <input type="number" min="0" max="23" id="hrFechamento_input" placeholder="00/23">
+        <br>
+        
+        <button onclick="calcularConsumo()" style="width: 130px; height: 130px;">Calcular</button>
+
+    </div>
+    <div id="resultado" style="text-align: center; font-size: 20px; margin-top: 20px;"></div>
+    <div id="res2" style="text-align: center; font-size: 20px; margin-top: 20px;"></div>
+
+    <script>
+
+        function calcularConsumo(){
+            var qntLampadas = Number(qtd_lampada.value);
+            var hrAbertura = Number(hrAbertura_input.value);
+            var hrFechamento = Number(hrFechamento_input.value); 
+            var watts = Number(watts_consumido.value);
+            var hrTotal = Number(hrFechamento - hrAbertura);  // Horário total de funcionamento da empresa
+
+            var HrDuranteDia = Number(0);  // Será o horário total que a empresa fica aberta durante o dia
+            var HrDuranteNoite = Number(0); // Será o horário total que a empresa fica aberta durante a noite
+            
+            var hrInicioDia = 7;
+            var hrTerminoDia = 17;
+
+            if(qntLampadas > 0){
+                if(hrFechamento > hrAbertura){
+
+                    if(hrAbertura <= hrInicioDia){
+                        if(hrFechamento >= hrTerminoDia){
+                            HrDuranteDia = hrTerminoDia - hrInicioDia;  // se expediente começar antes das 8 e terminar dps das 16 = HrDuranteDia = 17-7
+                        }
+                    }
+
+                    if(hrAbertura >= hrInicioDia){
+                        if(hrFechamento <= hrTerminoDia){
+                            HrDuranteDia = hrFechamento - hrAbertura; // se expediente começar depois das 7 e terminar antes das 17 
+                        }
+                    }
+
+                    if(hrAbertura <= hrInicioDia){
+                        if(hrFechamento <= hrTerminoDia){
+                            HrDuranteDia = hrFechamento - hrInicioDia; // se expediente começar antes das 7 e terminar antes das 17 = HrDuranteDia = fim do expediente - 7
+                        }
+                    }
+
+                    if(hrAbertura >= hrInicioDia){
+                        if(hrFechamento >= hrTerminoDia){
+                            HrDuranteDia = hrTerminoDia - hrAbertura; // se expediente começar depois das 7 e terminar dps das 17 = HrDuranteDia = 17 - inicio expediente
+                        }
+                    }
+
+                }else{
+                    alert(`Horário de funcionamento inválido`);
+                    var funInv = true;
+                }
+            }else{
+                alert(`Quantidade de lâmpadas iválido`);
+                var funInv = true;
+            }
+
+            var verificarWatts = Number(verWatt.value);
+            if(verificarWatts == 30){
+                watts = 30;
+            }
+
+             // Calcular horário total que a empresa fica aberta durante a noite
+            HrDuranteNoite = hrTotal - HrDuranteDia;
+            //alert(HrDuranteDia+"\n"+HrDuranteNoite);               
+
+            // kWh diário consumido pela empresa
+            // var kWhDiario = (watts * qntLampadas * hrTotal) / 1000; 
+            // kWh mensal consumido pela empresa
+            // var kWhMensal = kWhDiario * 26;
+            // Gasto mensal durante o dia e noite da empresa
+            gastoMensalAoDia = (((HrDuranteDia * qntLampadas * watts) / 1000) * 27) * 0.85;  // 27 = dias do mes. 0.85 = valor por kWh
+            gastoMensalAoNoite = (((HrDuranteNoite * qntLampadas * 30) / 1000) * 27) * 0.85;
+            var gastoTotal = gastoMensalAoDia + gastoMensalAoNoite;
+            var gastoDesconto = (gastoMensalAoDia * 0.50) + (gastoMensalAoNoite * 0.1);
+            var economia = gastoDesconto * 12;
+
+            if(funInv == true){
+                resultado.innerHTML = `Recarregue a página e tente novamente com valores válidos`;
+            }else{
+                resultado.innerHTML =   `Tempo de funcionamento: ${hrTotal}h <br> 
+                                    Tempo de funcionamento durante o dia: ${HrDuranteDia}h <br>
+                                    Tempo de funcionamento durante a noite: ${HrDuranteNoite}h <br>
+                                    Com a nossa ferramenta você pode economizar até 50% dos gastos durante o dia e 10% durante a noite, 
+                                    o que equivale a R$${gastoDesconto.toFixed(2)} por mês!<br>
+                                    Gerando assim uma economia média de: <b style="color:green">R$${economia.toFixed(2)}</b> ANUAL.<br><br>
+                                    Valores baseados em 30watts por lâmpada.<br><br>
+                                    Não possui lâmpadas inteligentes? Clique <a href="#" onclick="calcLampadasInte()">aqui</a>`;
+            }
+            
+
+        }
+            function calcLampadasInte(){
+                var qntLampadas = Number(qtd_lampada.value);
+                if(qntLampadas<=30){
+                    res2.innerHTML = `Você gastará em média R$${qntLampadas*35} para trocar todas as lâmpadas da sua empresa. Ou seja em ${parseInt((qntLampadas*35)/(gastoMensalAoDia * 0.50 + gastoMensalAoNoite * 0.10))} meses você começará a ter lucro.`;
+                }else{
+                    res2.innerHTML = `Você gastará em média R$${qntLampadas*25} para trocar todas as lâmpadas da sua empresa. Ou seja em <span style="color: green;">${parseInt((qntLampadas*25)/(gastoMensalAoDia * 0.50 + gastoMensalAoNoite * 0.10))}</span> meses você começará a ter lucro.`;
+                }
+                
+            }
+    </script>
+
+</body>
+</html>
