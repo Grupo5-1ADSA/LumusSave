@@ -20,7 +20,7 @@
 
             <input type="text" id="watts_consumido" placeholder="10w">
             <div style="display: flex; align-items: center;">
-                <input style="margin: 7px; width: 20px;" type="radio" value="30" id="verWatt"> <span style="font-size: 20px;">Não sei</span>
+                <input style="margin: 7px; width: 20px;" type="radio" value="true" id="verWatt"> <span style="font-size: 20px;">Não sei</span>
             </div>
             
 
@@ -91,8 +91,8 @@
                 var funInv = true;
             }
 
-            var verificarWatts = Number(verWatt.value);
-            if(verificarWatts == 30){
+            var verificarWatts = document.getElementById("verWatt");
+            if(verificarWatts.checked){
                 watts = 30;
             }
 
@@ -114,17 +114,23 @@
             if(funInv == true){
                 resultado.innerHTML = `Recarregue a página e tente novamente com valores válidos`;
             }else{
-                resultado.innerHTML =   `Tempo de funcionamento: ${hrTotal}h <br> 
+                /*resultado.innerHTML =   `Tempo de funcionamento: ${hrTotal}h <br> 
                                     Tempo de funcionamento durante o dia: ${HrDuranteDia}h <br>
                                     Tempo de funcionamento durante a noite: ${HrDuranteNoite}h <br>
                                     Com a nossa ferramenta você pode economizar até 50% dos gastos durante o dia e 10% durante a noite, 
                                     o que equivale a R$${gastoDesconto.toFixed(2)} por mês!<br>
                                     Gerando assim uma economia média de: <b style="color:green">R$${economia.toFixed(2)}</b> ANUAL.<br><br>
                                     Valores baseados em 30watts por lâmpada.<br><br>
+                                    Não possui lâmpadas inteligentes? Clique <a href="#" onclick="calcLampadasInte()">aqui</a>`;*/
+                resultado.innerHTML =   `Tempo de funcionamento: ${hrTotal}h <br>
+                                    Com a nossa ferramenta você pode economizar até 50% dos gastos durante o dia e 10% durante a noite, 
+                                    o que equivale a R$${gastoDesconto.toFixed(2)} por mês!<br>
+                                    Gerando assim uma economia média de: <b style="color:green">R$${economia.toFixed(2)}</b> ANUAL.<br><br>
+                                    Valores baseados em ${watts}watts por lâmpada.<br><br>
                                     Não possui lâmpadas inteligentes? Clique <a href="#" onclick="calcLampadasInte()">aqui</a>`;
             }
             
-
+            console.log(watts)
         }
             function calcLampadasInte(){
                 var qntLampadas = Number(qtd_lampada.value);
@@ -133,7 +139,7 @@
                 }else{
                     res2.innerHTML = `Você gastará em média R$${qntLampadas*25} para trocar todas as lâmpadas da sua empresa. Ou seja em <span style="color: green;">${parseInt((qntLampadas*25)/(gastoMensalAoDia * 0.50 + gastoMensalAoNoite * 0.10))}</span> meses você começará a ter lucro.`;
                 }
-                
+
             }
     </script>
 
