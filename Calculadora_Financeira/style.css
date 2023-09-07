@@ -16,9 +16,29 @@ body{
     border-radius: 30px;
     align-items: center;
     font-size: 30px;
+    box-shadow: 2px 2px 3px 1px #222;
 }
 
 .principal input{
-    width: 270px;
-    height: 30px;
+    width: 170px;
+    height: 24px;
+}
+
+h5{
+    margin: 5px;
+}
+
+button{
+    width: 160px; 
+    height: 40px;
+
+    background-color: #ffffff00;
+    cursor: pointer;
+    border: 2px solid #222;
+    font-size: 20px;
+    font-family: monospace;
+}
+
+button:hover{
+    box-shadow: 2px 2px 2px #222;
 }
