@@ -47,9 +47,9 @@ select * from empresa;
 
 insert into usuario value
 	(null, 'Alex Brawn', 2, 'sptech2023', 'alex@bandeirante.com.br', '99887-7665', 'admin'),
-    (null, 'Bob Grey', 3, 'sptech2023', 'bob@brasken.com.br', '98877-6655', 'comum'),
-    (null, 'Monica Araujo', 1, 'sptech2023', 'monica@petrobras.com.br', '97766-5544', 'comum'),
-    (null, 'Castro Manuel', 4, 'sptech2023', 'castro@bancodobrasil.com.br', '95544-3322', 'admin');
+	(null, 'Bob Grey', 3, 'sptech2023', 'bob@brasken.com.br', '98877-6655', 'comum'),
+	(null, 'Monica Araujo', 1, 'sptech2023', 'monica@petrobras.com.br', '97766-5544', 'comum'),
+	(null, 'Castro Manuel', 4, 'sptech2023', 'castro@bancodobrasil.com.br', '95544-3322', 'admin');
 
 select * from usuario;
 
