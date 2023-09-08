@@ -101,10 +101,10 @@
             // var kWhMensal = kWhDiario * 26;
             // Gasto mensal durante o dia e noite da empresa
             gastoMensalAoDia = (((HrDuranteDia * qntLampadas * watts) / 1000) * 27) * 0.85;  // 27 = dias do mes. 0.85 = valor por kWh
-            gastoMensalAoNoite = (((HrDuranteNoite * qntLampadas * 30) / 1000) * 27) * 0.85;
+            gastoMensalAoNoite = (((HrDuranteNoite * qntLampadas * watts) / 1000) * 27) * 0.85;
             var gastoTotal = gastoMensalAoDia + gastoMensalAoNoite;
             var gastoDesconto = (gastoMensalAoDia * 0.50) + (gastoMensalAoNoite * 0.1);
-            var economia = gastoDesconto * 12;
+            var economiaAnual = gastoDesconto * 12;
 
             if(funInv == true){
                 resultado.innerHTML = `Recarregue a página e tente novamente com valores válidos`;
@@ -120,7 +120,7 @@
                 resultado.innerHTML =   `Tempo de funcionamento: ${hrTotal}h <br>
                                     Com a nossa ferramenta você pode economizar até 50% dos gastos durante o dia e 10% durante a noite, 
                                     o que equivale a R$${gastoDesconto.toFixed(2)} por mês!<br>
-                                    Gerando assim uma economia média de: <b style="color:green">R$${economia.toFixed(2)}</b> ANUAL.<br><br>
+                                    Gerando assim uma economia média de: <b style="color:green">R$${economiaAnual.toFixed(2)}</b> ANUAL.<br><br>
                                     Valores baseados em ${watts}watts por lâmpada.<br><br>
                                     Não possui lâmpadas inteligentes? Clique <a href="#" onclick="calcLampadasInte()">aqui</a>`;
             }
