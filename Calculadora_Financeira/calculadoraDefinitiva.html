@@ -10,24 +10,19 @@
 </head>
 <body>
     <h2>Calcule o quanto você economizará na conta de luz utilizando o monitoramento do nosso sensor</h2>
-    <div class="principal">
 
+    <div class="principal">
         Quantidade de lâmpadas:
-        <input type="text" id="qtd_lampada" placeholder="50" min="1">
-        <br>
+        <input type="text" id="qtd_lampada" placeholder="Ex: 50" min="1"><br>
 
         Potência da lâmpada:
-
-            <input type="text" id="watts_consumido" placeholder="10w">
-            <div style="display: flex; align-items: center;">
-                <input style="margin: 7px; width: 20px;" type="radio" value="true" id="verWatt"> <span style="font-size: 20px;">Não sei</span>
-            </div>
-            
-
+        <input type="text" id="watts_consumido" placeholder="Ex: 25">
+        <div style="display: flex; align-items: center;">
+            <input style="margin: 7px; width: 20px;" type="radio" value="true" id="verWatt"> <span style="font-size: 20px;">Não sei</span>
+        </div>
         <br>
 
-        <h5>Horario de funcionamento do seu escritório</h5>
-        
+        <h5>Horário de funcionamento do seu escritório</h5>
         Abertura:
         <input type="number" min="0" max="23" id="hrAbertura_input" placeholder="00/23">
         Fechamento:
@@ -35,8 +30,8 @@
         <br>
         
         <button onclick="calcularConsumo()">Calcular</button>
-
     </div>
+
     <div id="resultado" style="text-align: center; font-size: 20px; margin-top: 20px;"></div>
     <div id="res2" style="text-align: center; font-size: 20px; margin-top: 20px;"></div>
 

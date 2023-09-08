@@ -1,5 +1,5 @@
 body{
-    background-color: rgba(247, 238, 208, 0.795);
+    background-color: rgba(249, 243, 224, 0.795);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -17,6 +17,7 @@ body{
     align-items: center;
     font-size: 30px;
     box-shadow: 2px 2px 3px 1px #222;
+    background-color: rgba(255, 247, 223, 0.795);
 }
 
 .principal input{
