@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard LUMUS</title>
+</head>
+<body>
+    <div>
+        <h1>Intensidade da iluminação por local - Lumus</h1>
+        <div>
+            <canvas id="bar-chart"></canvas>
+        </div>
+    </div>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
+    <script>
+		// Bar chart
+		new Chart(document.getElementById("bar-chart"), {
+			type: 'line',
+			data: {
+				labels: ["Espaço principal", "Área de serviço", "Banheiro", "Varanda", "Copa"],
+				datasets: [
+					{
+						label: "Intensidade",
+						backgroundColor: ["blue", "green",
+							"yellow", "brown", "orange"],
+						data: [2675, 1500, 1000, 750, 1245]
+					}
+				]
+			},
+			options: {
+				legend: { display: false },
+				title: {
+					display: true,
+					text: 'Intensidade da iluminação por local - Lumus Sense'
+				}
+			}
+		});
+	</script>
+</body>
+</html>

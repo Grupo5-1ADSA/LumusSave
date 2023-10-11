@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chart JS Bar Chart Example</title>
+<link rel='stylesheet' href='style.css' type='text/css' />
+</head>
+<body>
+    <div class="phppot-container">
+        <h1>Intensidade da iluminação por local - Lumus Sense</h1>
+        <div>
+            <canvas id="bar-chart"></canvas>
+        </div>
+    </div>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
+    <script>
+		// Bar chart
+		new Chart(document.getElementById("bar-chart"), {
+			type: 'bar',
+			data: {
+				labels: ["Escritório", "Varanda", "Banheiro", "Área de serviço", "Copa"],
+				datasets: [
+					{
+						label: "Intensidade",
+						backgroundColor: ["#51EAEA", "#FCDDB0",
+							"#FF9D76", "#FB3569", "#82CD47"],
+						data: [2780, 267, 1650, 1320, 1856]
+					}
+				]
+			},
+			options: {
+				legend: { display: false },
+				title: {
+					display: true,
+					text: 'Intensidade da iluminação por local - Lumus Sense'
+				}
+			}
+		});
+	</script>
+</body>
+</html>

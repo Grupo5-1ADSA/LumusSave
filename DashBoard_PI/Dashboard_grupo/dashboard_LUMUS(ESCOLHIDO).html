@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMUS</title>
+    <link rel="stylesheet" href="graficos_lumus.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="graficos">
+        <div class="escritorio">
+            <h1>Escritório</h1>
+            <canvas id="grafico_linhas"></canvas>
+        </div>
+        <div class="sala_ceo">
+            <h1>Sala CEO</h1>
+            <canvas id="grafico_linhas2"></canvas>
+        </div>
+        <div class="recepcao">
+            <h1>Recepção</h1>
+            <canvas id="grafico_linhas3"></canvas>
+        </div>
+        <div class="refeitorio">
+            <h1>Refeitório</h1>
+            <canvas id="grafico_linhas4"></canvas>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('grafico_linhas');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['12h', '13h', '14h', '15h', '16h', '17h'],
+            datasets: [{
+                label: 'LUX',
+                backgroundColor: '#F4CD7E',
+                borderColor: 'rgb(150,150,140)',
+                data: [200, 240, 210, 260, 320, 430],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    const ctx2 = document.getElementById('grafico_linhas2');
+
+    new Chart(ctx2, {
+        type: 'line',
+        data: {
+            labels: ['12h', '13h', '14h', '15h', '16h', '17h'],
+            datasets: [{
+                label: 'LUX',
+                backgroundColor: '#F4CD7E',
+                borderColor: 'rgb(150,150,140)',
+                data: [190, 140, 180, 250, 450, 10],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    const ctx3 = document.getElementById('grafico_linhas3');
+
+    new Chart(ctx3, {
+        type: 'line',
+        data: {
+            labels: ['12h', '13h', '14h', '15h', '16h', '17h'],
+            datasets: [{
+                label: 'LUX',
+                backgroundColor: '#F4CD7E',
+                borderColor: 'rgb(150,150,140)',
+                data: [300, 290, 280, 300, 280, 290],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    const ctx4 = document.getElementById('grafico_linhas4');
+
+    new Chart(ctx4, {
+        type: 'line',
+        data: {
+            labels: ['12h', '13h', '14h', '15h', '16h', '17h'],
+            datasets: [{
+                label: 'LUX',
+                backgroundColor: '#F4CD7E',
+                borderColor: 'rgb(150,150,140)',
+                data: [600, 700, 520, 130, 120, 524],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

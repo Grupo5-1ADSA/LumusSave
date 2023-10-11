@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o chart.JS</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"> </script>
+</head>
+<body style="display: flex;">
+
+    <div> 
+        <canvas id="myChart" style="position: relative; height:40vh; width:80vw">
+        </canvas>
+    </div>
+
+</body>
+</html>
+
+<script>
+  const myChart = document.getElementById('myChart');
+
+  new Chart(myChart, {
+    type: 'line',
+    
+    data:
+    {
+        labels: ['300', '420', '500', '580', '689', '800', '920'],
+            datasets: 
+            [{
+                label: 'Luminosidade Exemplo Hipotético',
+                data: [300, 500, 600, 920, 220, 450],
+                borderWidth: 4
+            },
+            ]
+    },
+
+    options:
+    {
+      scales: 
+      {
+        y:
+        {
+          beginAtZero: true
+        }
+      }
+    }
+  }); 
+
+</script>
+
+
+
+<!-- 
+CANVAS = tela em branco, rendenrizar o nosso gráfico 
+importar códigos - utilizar a tag script com o atributo src 
+vetores e jason
+vetores = labels
+const = nada que eu faça vai mudar o valor dela, mesmo utilizando script de soma
+
+datasets = jason e vetor (nossas métricas)
+jason = posso ter várias propriedades que juntos tornam uma só
+-->
