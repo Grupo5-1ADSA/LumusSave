@@ -7,6 +7,7 @@
 
 /* Ajustes gerais */
 body{
+    font-family: 'glacial';
     margin: 0;
     padding: 0;
 }
@@ -27,7 +28,6 @@ body{
     display: grid;
     grid-template-columns: 1 1 1;
     color: #F1FAFF;
-    
 }
 
 .div_esquerda{
@@ -62,13 +62,13 @@ body{
 
 /* Apenas cor */
 .div_home {
-    
-background: #3F949C;
-height: 750px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #3F949C;
+    height: 750px;
 }
-
-
-/* style login */
 
 
 .container .card {
@@ -76,10 +76,10 @@ height: 750px;
     align-items: center;
 
 }
-.card{
-    width: 385px;
-    height: 310px;
-    background-color: #FFFF75;
+.card_login {
+    width: 360px;
+    height: 330px;
+    background-color: #0A5C6C;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -88,7 +88,7 @@ height: 750px;
     color: #5c5c5c;
 }
 .campo span{
-
+    color: white;
     align-items: right;
     padding: 3%;
     
@@ -101,14 +101,15 @@ height: 750px;
     height: 40px;
     border-radius: 20px;
     border-style: none;
-    outline:none;
+    outline: none;
     padding:  0% 5%;
+    font-style: italic;
 } 
 
 .formulario h1{
     display: flex;
     align-items: center;
-    color: #FFCC00;
+    color: #f0ca05;
 }
 .botao {
     cursor: pointer;
@@ -117,8 +118,27 @@ height: 750px;
     border-radius: 20px;
     font-size: 15px;
     color: #fff;
-    background-color: #FFCC00;
+    background-color: #3F949C;
     width: 100px;
     height: 30px;
     
+}
+.imagem_login img {
+    height: 500px;
+    width: 500px;
+}
+.imagem_login{
+    display: flex;
+}
+
+.card_cadastro {
+    width: 360px;
+    height: 700px;
+    background-color: #0A5C6C;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    color: #5c5c5c;
 }
