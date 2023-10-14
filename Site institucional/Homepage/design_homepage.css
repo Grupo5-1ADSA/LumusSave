@@ -1,0 +1,171 @@
+/* Fonte da navbar  */
+@font-face{
+    font-family: 'glacial' ;
+    src: url("public/assets/glacial-indifference/GlacialIndifference-Regular.otf") format(opentype);
+    font-weight: normal;
+}
+
+/* Ajustes gerais */
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    background: #0A5C6C;
+    font-family: 'glacial';
+    
+}
+
+.header .container{
+    width: 80%;
+    margin: auto;
+}
+
+/* Formatação da navbar para alinhar os itens */
+.header .navbar{
+    display: grid;
+    grid-template-columns: 1 1 1;
+    color: #F1FAFF;
+    
+}
+
+.div_esquerda{
+    width: 546.4px;
+    grid-column: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 25px;
+}
+
+
+.div_centro{
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div_direita{
+    width: 546.4px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    grid-column: 3;
+}
+
+/* Logo Lumus: */
+.header img{   
+    width: 140px;   
+}
+/* FIM DA BARRA DE NAVEGAÇÃO*/
+
+/* Homepage */
+
+/*cor */
+.homepage {
+    background: #e6e6e6;
+}
+
+/* Imagem inicial */
+.about .img{
+    width: 100%;
+    display: inline-block;
+    position: relative;
+  
+}
+
+.about figcaption {
+    text-align: justify;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 3%;
+    position: absolute;
+    top: 687px;
+    right: 950px;
+    font-size: 30px;
+    color: #0A5C6C;
+    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+}
+
+.about img{
+    width: 100%;
+    }
+
+    /* BOTÃO IMAGEM */
+.about button{
+    position: relative;
+    bottom: 10px;
+    width: 120px;
+    height: 40px;
+    background-color: #0A5C6C;
+    color: #F1FAFF;
+    font-size: 15px;
+    border-radius: 10%;
+}   /* FIM BOTÃO */
+
+/* SOBRE NÓS */
+    /* Lumus Sense */
+.homepage .value h2{
+    display: flex;
+    justify-content: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 30px;
+}   /* Lumus Sense */
+
+    /* Introdução */
+.homepage .value .intro{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    text-align: justify;
+    margin: 10px 110px;
+}   /* FIM INTRO */
+
+    /* CAIXINHAS SOBRE NÓS */
+.homepage .value .subtitle{
+    width: 1000px;
+    height: 10px;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    margin: 50px 180px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.value .boxes{
+    position: relative;
+    top: 100px;
+    left: 150px;
+    width: 700px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.value .box{
+    width: 900px;
+    height: 300px;
+    background-color: rgb(184, 241, 243);
+    border-radius: 10%;
+    padding: 15px;
+    margin: 100px 10px;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
