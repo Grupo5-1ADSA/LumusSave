@@ -5,7 +5,17 @@
     font-weight: normal;
 }
 
+@font-face {
+    font-family: 'vanilla';
+    src: url(public/assets/fonts/glacial-indifference/GlacialIndifference-Regular.otf) format(opentype);
+    font-weight: normal;
+}
+
 /* Ajustes gerais */
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -26,12 +36,11 @@ body {
 .header .navbar {
     display: grid;
     grid-template-columns: 1 1 1;
-    color: #F1FAFF;
-
 }
 
 a{
     text-decoration: none;
+    color: #F1FAFF;
 }
 
 .div_esquerda {
@@ -72,17 +81,19 @@ a{
     height: 2000px;
     display: grid;
     grid-template-rows: 1 1;
-    align-items: flex-start;
+    
 }
 
-/* Primeira parte */
+/* inicio site */
+
+
 .div_home .container {
     grid-row: 1 ;
     display: grid;
     grid-template-columns: 1 1;
     grid-template-rows: 3;
     margin: 0 10px 0;
-    height: 300px;
+    height: 90vh;
     width: 1300px;
 }
 
@@ -101,13 +112,20 @@ a{
 
 .lema_lumus button{
     position: absolute;
-    width: 130px;
-    height: 55px;
+    width: 150px;
+    height: 45px;
     background-color: #F1FAFF;
     color: #000000;
     font-size: 15px;
-    border-radius: 38%;
+    border-radius: 9%;
     align-self: flex-end;
+    font-family: 'glacial';
+    cursor: pointer;
+    align-items: center;
+    border: 0;
+    border-radius: 20px;
+    background-color: #1C89E6;
+    
 }
 
 
@@ -125,35 +143,69 @@ a{
 }
 
 /* Seção de valores */
+
 .div_valores{
     grid-row: 2;
-    margin: 0 15px 20px;
-    height: 600px;
+    margin: 0 15px 10px;
+    display: grid;
+    grid-template-columns: 1 1 1;
+    grid-template-rows: 1 1 2;
+    height: 95vh;
     width: 1300px;
-
+    font-family: 'vanilla';
 }
 
-.boxes_valores{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+h2{
+    height: 100px;
+    width: 430px;
+    font-size: 80px ;
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: center;
+    align-self: center;
+    margin: 0px 0px 15px 0px;
+    color: #F0CA05;
 }
+
 
 .titulos{
+    grid-row: 2;
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 5px;
+    color: #F1FAFF;
+}
+
+.boxes_valores{
+    grid-row: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* color: ; */
+}
+
+.titulos h3{
+ width: 150px;
+height: 75px;
+margin: 0;
+font-size: 30px ;
 }
 
 .boxes_valores .box{
 
-    width: 900px;
-    height: 300px;
+    width: 350px;
+    height: 400px;
     background-color: rgb(184, 241, 243);
     border-radius: 10%;
     padding: 15px;
-    margin: 10px 10px;
-    font-size: 15px;
+    margin: 7px 10px;
+    
 }
 
+.boxes_valores h4{
+font-size: 19px;
+}
+.boxes_valores p{
+    font-size: 16px
+}
