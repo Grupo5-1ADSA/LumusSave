@@ -11,7 +11,10 @@ body{
     margin: 0;
     padding: 0;
 }
-
+a{
+    text-decoration: none;
+    color: white;
+}
 .header{
     background: #0A5C6C;
     font-family: 'glacial';
@@ -112,6 +115,7 @@ body{
     color: #f0ca05;
 }
 .botao {
+    font-family: glacial;
     cursor: pointer;
     align-items: center;
     border: 0;
@@ -141,4 +145,81 @@ body{
     justify-content: space-around;
     flex-direction: column;
     color: #5c5c5c;
+}
+.card_calculadora{
+    width: 1000px;
+    height: 520px;
+    display: flex;
+    background-color: #0A5C6C;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    
+}
+.formulario_calculadora h1{
+    grid-row: 1;
+    text-align: center;
+    justify-content: center;
+    color: #f0ca05;
+
+
+}
+.formulario_calculadora input{
+    display: flex;
+    justify-content:left;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    border-style: none;
+    outline: none;
+    padding:  0% 5%;
+    font-style: italic;
+}
+.formulario_calculadora select{
+    display: flex;
+    width: 160px;
+    height: 30px;
+    border-radius: 20px;
+    border-style: none;
+    outline: none;
+    padding:  0% 4%;
+    font-style: italic;
+}
+.container .card_calculadora {
+    display: flex;
+    align-items: center;
+    text-justify: auto;
+}
+.formulario_calculadora .div_itens{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    flex-direction: column;
+    margin-top: 5px;
+   
+}
+.imagem_calculadora img{
+   width: 183.2px;
+   height: 377.38px;
+   margin-right: 40px;
+}
+#div1{
+    width: 1000px;
+}
+
+.botao_calculadora{
+    font-family: glacial;
+    cursor: pointer;
+    align-items: center;
+    border: 0;
+    border-radius: 20px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #3F949C;
+    width: 100px;
+    height: 30px;
+    
+}
+.span_texto{
+    margin-top: 5px;
 }
