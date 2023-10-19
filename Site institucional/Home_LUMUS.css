@@ -20,6 +20,10 @@ body {
     margin: 0;
     padding: 0;
 }
+a{
+    text-decoration: none;
+    color: white;
+}
 
 .header {
     background: #0A5C6C;
