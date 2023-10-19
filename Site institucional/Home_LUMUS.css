@@ -1,12 +1,12 @@
 /* Fonte da navbar  */
-@font-face{
-    font-family: 'glacial' ;
+@font-face {
+    font-family: 'glacial';
     src: url("public/assets/glacial-indifference/GlacialIndifference-Regular.otf") format(opentype);
     font-weight: normal;
 }
 
 /* Ajustes gerais */
-body{
+body {
     margin: 0;
     padding: 0;
 }
@@ -15,26 +15,30 @@ a{
     color: white;
 }
 
-.header{
+.header {
     background: #0A5C6C;
     font-family: 'glacial';
-    
+
 }
 
-.header .container{
+.header .container {
     width: 80%;
     margin: auto;
 }
 
 /* Formatação da navbar para alinhar os itens */
-.header .navbar{
+.header .navbar {
     display: grid;
     grid-template-columns: 1 1 1;
     color: #F1FAFF;
-    
+
 }
 
-.div_esquerda{
+a{
+    text-decoration: none;
+}
+
+.div_esquerda {
     width: 546.4px;
     grid-column: 1;
     display: flex;
@@ -44,14 +48,14 @@ a{
 }
 
 
-.div_centro{
+.div_centro {
     grid-column: 2;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.div_direita{
+.div_direita {
     width: 546.4px;
     display: flex;
     justify-content: space-around;
@@ -60,69 +64,100 @@ a{
 }
 
 /* Logo Lumus: */
-.header img{   
-    width: 140px;   
+.header img {
+    width: 140px;
 }
 
-/* Apenas cor */
+/* HomePage */
+
 .div_home {
-    
-background: #3F949C;
-height: 750px;
+
+    background: #3F949C;
+    height: 2000px;
+    display: grid;
+    grid-template-rows: 1 1;
+    align-items: flex-start;
 }
 
-
-/* style login */
-
-
-.container .card {
-    display: flex;
-    align-items: center;
-
+/* Primeira parte */
+.div_home .container {
+    grid-row: 1 ;
+    display: grid;
+    grid-template-columns: 1 1;
+    grid-template-rows: 3;
+    margin: 0 10px 0;
+    height: 300px;
+    width: 1300px;
 }
-.card{
-    width: 385px;
-    height: 310px;
-    background-color: #FFFF75;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: column;
-    color: #5c5c5c;
-}
-.campo span{
 
-    align-items: right;
-    padding: 3%;
-    
-
-}
-.campo input{
+.div_home .container .lema_lumus {
+    grid-column: 1;
+    grid-row: 1;
     display: flex;
     justify-content: center;
-    width: 260px;
-    height: 40px;
-    border-radius: 20px;
-    border-style: none;
-    outline:none;
-    padding:  0% 5%;
-} 
-
-.formulario h1{
-    display: flex;
     align-items: center;
-    color: #FFCC00;
-}
-.botao {
-    cursor: pointer;
-    align-items: center;
-    border: 0;
-    border-radius: 20px;
-    font-size: 15px;
-    color: #fff;
-    background-color: #FFCC00;
-    width: 100px;
-    height: 30px;
     
 }
+.lema_lumus img {
+    height: 600px;
+    width: 600px;
+}
+
+.lema_lumus button{
+    position: absolute;
+    width: 130px;
+    height: 55px;
+    background-color: #F1FAFF;
+    color: #000000;
+    font-size: 15px;
+    border-radius: 38%;
+    align-self: flex-end;
+}
+
+
+.div_home .container .imagem_home {
+    grid-column: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+.imagem_home img{
+    width: 600px;
+    height: 600px;
+}
+
+/* Seção de valores */
+.div_valores{
+    grid-row: 2;
+    margin: 0 15px 20px;
+    height: 600px;
+    width: 1300px;
+
+}
+
+.boxes_valores{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.boxes_valores .box{
+
+    width: 900px;
+    height: 300px;
+    background-color: rgb(184, 241, 243);
+    border-radius: 10%;
+    padding: 15px;
+    margin: 10px 10px;
+    font-size: 15px;
+}
+
