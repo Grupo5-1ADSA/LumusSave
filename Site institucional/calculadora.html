@@ -27,11 +27,11 @@
             </div>
         </div>
     </div>
-<div class="div_home">
+<div class="div_home_calculadora">
         
     
-    <div class="container">
-        <div class="card_calculadora">
+<div class="container_calculadora">
+    <div class="card_calculadora">
         <div class="imagem_calculadora">  <img src="https://marketplace.canva.com/o5Slw/MAEyZjo5Slw/1/tl/canva-outlined-boy-holding-a-calculator-MAEyZjo5Slw.png"> </div>
             <div class="formulario_calculadora">
                 <h1>Calculadora Financeira</h1>
@@ -50,11 +50,12 @@
                 <input id="input_abertura" type="number" min="0" max="23" placeholder="Ex:8">
                 <span class="span_texto">Horário de saída/fechamento do local (00h-23h):</span> 
                 <input id="input_fechamento" type="number" min="0" max="23" placeholder="Ex:18"><br>
-                <button onclick="calcularResultado()" class="botao_calculadora">Resultado</button></div>
+                <a href:"#div_resultado"><button onclick="calcularResultado()" class="botao_calculadora">  Resultado</button></div></a>
                 
             </div>
-        </div><div id="div1"></div>
-    </div>
+    </div> <br><br><br><br>   
+        <div id="div1" class="div_resultado"> 
+        </div>
 </div>
 
  </body>
@@ -72,7 +73,7 @@
 
         var custoKWH = 0.85; 
         // 85 CENTAVOS CADA KWH
-        var custoLampadaInteligente = qtdLampadas*30;
+        var custoLampadaInteligente= qtdLampadas*30;
         // DEFINIMOS COMO 30 REAIS O CUSTO DE CADA LÂMPADA INTELIGENTE
 
         var custo_incandescente = qtdLampadas * 60 * horasDeUso / 1000 * 30 * custoKWH;
@@ -106,28 +107,29 @@
         var calculoLucroFluorescente = custoLampadaInteligente / economiaMensalFLuorescente;
         var calculoLucroLED = custoLampadaInteligente / economiaMensalLED;
 
+        div1.innerHTML="";
 
         if (horarioFechamento > horarioAbertura && horarioFechamento > 0 && horarioFechamento < 24 && horarioAbertura > 0 && horarioAbertura < 24) {
             if (qtdLampadas > 0) {
 
                 if (tipoLampada == 'Incandescente') {
                     div1.innerHTML = `
-                    Tempo de funcionamento: ${horasDeUso}h <br>
-                    Você gasta cerca de R$<b>${custo_incandescente}</b> mensalmente com suas lâmpadas atuais. Com nossas lâmpadas inteligentes você gastaria apenas R$</b>${porcentagemIncandescente}</b> pelo mesmo consumo.<br> Para adquiri-las você investirá cerca de R$<b>${custoLampadaInteligente}</b> e dentro de ${calculoLucroIncandescente} meses você começará a ter lucro. <br><br>
+                    Tempo de funcionamento: <b> ${horasDeUso}h </b><br>
+                    Você gasta cerca de R$<b>${custo_incandescente.toFixed(2)}</b> mensalmente com suas lâmpadas atuais. Com nossas lâmpadas inteligentes você gastaria apenas R$<b>${porcentagemIncandescente.toFixed(2)}</b> pelo mesmo consumo e teria uma economia de R$<b>${economiaMensalIncandescente.toFixed(2)}</b> por mês.<br> Para adquiri-las você investirá cerca de R$<b>${custoLampadaInteligente.toFixed(2)}</b> e dentro de <b>${calculoLucroIncandescente.toFixed(0)} meses </b> você começará a ter lucro. <br><br>
                     Acesse o link abaixo para adquiri-las agora mesmo! 
                     `
                 } 
                 if (tipoLampada == 'Fluorescente') {
                     div1.innerHTML = `
-                    Tempo de funcionamento: ${horasDeUso}h <br>
-                    Você gasta cerca de R$<b>${custo_fluorescente}</b> mensalmente com suas lâmpadas atuais. Com nossas lâmpadas inteligentes você gastaria apenas R$</b>${porcentagemFluorescente}</b> pelo mesmo consumo.<br> Para adquiri-las você investirá cerca de R$<b>${custoLampadaInteligente}</b> e dentro de ${calculoLucroFluorescente} meses você começará a ter lucro. <br><br>
+                    Tempo de funcionamento: <b>${horasDeUso}h </b><br>
+                    Você gasta cerca de R$<b>${custo_fluorescente.toFixed(2)}</b> mensalmente com suas lâmpadas atuais. Com nossas lâmpadas inteligentes você gastaria apenas R$<b>${porcentagemFluorescente.toFixed(2)}</b> pelo mesmo consumo e teria uma economia de R$<b>${economiaMensalFLuorescente.toFixed(2)}</b> por mês.<br> Para adquiri-las você investirá cerca de R$<b>${custoLampadaInteligente.toFixed(2)}</b> e dentro de <b>${calculoLucroFluorescente.toFixed(0)} meses </b> você começará a ter lucro. <br><br>
                     Acesse o link abaixo para adquiri-las agora mesmo!
                     `
                 }
                 if (tipoLampada == 'LED') {
                     div1.innerHTML = `
-                    Tempo de funcionamento: ${horasDeUso}h <br><br>
-                    Você gasta cerca de R$<b>${custo_LED}</b> mensalmente com suas lâmpadas atuais. Com nossas lâmpadas inteligentes você gastaria apenas R$<b>${porcentagemLED}</b> pelo mesmo consumo.<br> Para adquiri-las você investirá cerca de R$<b>${custoLampadaInteligente}</b> e dentro de <b> apenas ${calculoLucroLED} meses </b> você começará a ter lucro! <br><br>
+                    Tempo de funcionamento: <b>${horasDeUso}h </b><br>
+                    Você gasta cerca de R$<b>${custo_LED.toFixed(2)}</b> mensalmente com suas lâmpadas atuais. Com nossas lâmpadas inteligentes você gastaria apenas R$<b>${porcentagemLED.toFixed(2)}</b> pelo mesmo consumo e teria uma economia de R$ <b>${economiaMensalLED.toFixed(2)}</b> por mês.<br> Para adquiri-las você investirá cerca de R$<b>${custoLampadaInteligente.toFixed(2)}</b> e dentro de <b> ${calculoLucroLED.toFixed(0)} meses </b> você começará a ter lucro! <br><br>
                     Acesse o link abaixo para adquiri-las agora mesmo!
                     `
                 }   
