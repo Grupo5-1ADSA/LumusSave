@@ -7,75 +7,17 @@
 
 @font-face {
     font-family: 'vanilla';
-    src: url(public/assets/fonts/glacial-indifference/GlacialIndifference-Regular.otf) format(opentype);
+    src: url(public/assets/fonts/apollo/APOLLO.otf) format(opentype);
     font-weight: normal;
 }
+
+
 
 /* Ajustes gerais */
 html{
     scroll-behavior: smooth;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
-a{
-    text-decoration: none;
-    color: white;
-}
-
-.header {
-    background: #0A5C6C;
-    font-family: 'glacial';
-
-}
-
-.header .container {
-    width: 80%;
-    margin: auto;
-}
-
-/* Formatação da navbar para alinhar os itens */
-.header .navbar {
-    display: grid;
-    grid-template-columns: 1 1 1;
-}
-
-a{
-    text-decoration: none;
-    color: #F1FAFF;
-}
-
-.div_esquerda {
-    width: 546.4px;
-    grid-column: 1;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-left: 25px;
-}
-
-
-.div_centro {
-    grid-column: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.div_direita {
-    width: 546.4px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    grid-column: 3;
-}
-
-/* Logo Lumus: */
-.header img {
-    width: 140px;
-}
 
 /* HomePage */
 
@@ -97,7 +39,7 @@ a{
     grid-template-columns: 1 1;
     grid-template-rows: 3;
     margin: 0 10px 0;
-    height: 90vh;
+    height: 85vh;
     width: 1300px;
 }
 
@@ -118,8 +60,8 @@ a{
     position: absolute;
     width: 150px;
     height: 45px;
-    background-color: #F1FAFF;
-    color: #000000;
+    
+    color: #F1FAFF;
     font-size: 15px;
     border-radius: 9%;
     align-self: flex-end;
@@ -128,7 +70,8 @@ a{
     align-items: center;
     border: 0;
     border-radius: 20px;
-    background-color: #1C89E6;
+    background-color:#0A5C6C;
+    ;
     
 }
 
@@ -150,13 +93,13 @@ a{
 
 .div_valores{
     grid-row: 2;
-    margin: 0 15px 10px;
+    margin: 0 0px 10px;
     display: grid;
     grid-template-columns: 1 1 1;
     grid-template-rows: 1 1 2;
-    height: 95vh;
-    width: 1300px;
-    font-family: 'vanilla';
+    height: 100vh;
+    width: 100%;
+    background-color: #0A5C6C;
 }
 
 h2{
@@ -167,8 +110,9 @@ h2{
     grid-column: 1;
     justify-self: center;
     align-self: center;
-    margin: 0px 0px 15px 0px;
+    margin: 10px 0px 15px 0px;
     color: #F0CA05;
+    font-family: 'vanilla';
 }
 
 
@@ -179,6 +123,7 @@ h2{
     align-items: center;
     margin-bottom: 5px;
     color: #F1FAFF;
+    font-family: 'vanilla';
 }
 
 .boxes_valores{
@@ -186,7 +131,8 @@ h2{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* color: ; */
+    padding: 5px 25px 40px;
+    
 }
 
 .titulos h3{
@@ -194,6 +140,16 @@ h2{
 height: 75px;
 margin: 0;
 font-size: 30px ;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.boxes_valores img{
+    width: 60px;
+    height: 45px;
+    
 }
 
 .boxes_valores .box{
