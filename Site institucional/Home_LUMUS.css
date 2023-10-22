@@ -6,7 +6,7 @@
 }
 
 @font-face {
-    font-family: 'vanilla';
+    font-family: 'apollo';
     src: url(public/assets/fonts/apollo/APOLLO.otf) format(opentype);
     font-weight: normal;
 }
@@ -18,6 +18,63 @@ html{
     scroll-behavior: smooth;
 }
 
+body{
+    font-family: 'glacial';
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+.header{
+    background: #0A5C6C;
+    font-family: 'glacial';
+    
+}
+
+.header .container{
+    width: 80%;
+    margin: auto;
+}
+
+/* Formatação da navbar para alinhar os itens */
+.header .navbar{
+    display: grid;
+    grid-template-columns: 1 1 1;
+    color: #F1FAFF;
+}
+
+.div_esquerda{
+    width: 546.4px;
+    grid-column: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 25px;
+}
+
+
+.div_centro{
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div_direita{
+    width: 546.4px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    grid-column: 3;
+}
+
+/* Logo Lumus: */
+.header img{   
+    width: 140px;   
+}
 
 /* HomePage */
 
@@ -112,7 +169,7 @@ h2{
     align-self: center;
     margin: 10px 0px 15px 0px;
     color: #F0CA05;
-    font-family: 'vanilla';
+    font-family: 'apollo';
 }
 
 
