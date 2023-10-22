@@ -38,7 +38,7 @@ background-color: #0A5C6C;
 display: flex;
 align-items: center;
 flex-direction: column;
-justify-content: space-around;
+justify-content: space-evenly;
 justify-self: left;
 grid-column: 1;
 }
@@ -49,6 +49,10 @@ grid-column: 1;
     height: auto;
     margin-right: 9px;
     
+}
+
+.usuario{
+    margin-left: 20px;
 }
 
 .item_barLateral {
