@@ -11,6 +11,11 @@ body{
     margin: 0;
     padding: 0;
 }
+
+html{
+ scroll-behavior: smooth;
+}
+
 a{
     text-decoration: none;
     color: white;
@@ -206,9 +211,6 @@ a{
    height: 377.38px;
    margin-right: 40px;
 }
-#div1{
-    width: 1000px;
-}
 
 .botao_calculadora{
     font-family: glacial;
@@ -232,7 +234,7 @@ a{
     border-radius: 20px;
     align-items: center;
     justify-content: center;
-    font-size: 36px;
+    font-size: 30px;  
     
 }
 .div_home_calculadora {
