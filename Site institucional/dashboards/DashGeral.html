@@ -68,6 +68,13 @@
         },
         options: {
             indexAxis: 'y',
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#fff'
+                    }
+                }
+            },
             scales: {
                 x: {
                     grid: {
@@ -76,6 +83,7 @@
                     ticks: {
                         color: '#CFDEF1'
                     }
+                    
                 },
                 y: {
                     beginAtZero: true,
@@ -106,14 +114,14 @@
             labels: ['1', '2', '3', '3', '4', '5','6','7','8','9','10','11','12','13','14','15'],
   datasets: [
   {
-      label: 'Consumo Dia',
+      label: 'Dia',
       data: [300, 460, 480, 350, 300, 260, 280, 220, 280, 250, 250, 220, 200, 170, 190, 180],
       backgroundColor: '#F5A302',
       stack: 'Stack 0',
       borderWidth: '100px'
     },
     {
-      label: 'Consumo noite',
+      label: 'Noite',
       data: [510, 560, 520, 450, 450, 450, 500, 620, 540, 580, 450, 600, 570, 660, 260, 300],
       backgroundColor: '#3F949C',
       stack: 'Stack 0',
@@ -130,6 +138,13 @@
 },
         
         options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#fff'
+                    }
+                }
+            },
             scales: {
                 x: {
                     grid: {
