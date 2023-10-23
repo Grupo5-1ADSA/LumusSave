@@ -56,7 +56,7 @@
                         <div class="campo">
                         <span> Telefone celular:<br></span><input id="input_celular" type="tel" placeholder="(**)*****-****">
                         </div><br>
-                        <span id="validacao" style="color:red"></span><br>
+                        <span id="validacao" style="color:#f33838"></span><br>
                         <div id="botao">
                         <button class="botao" onclick="botaoCadastro()">Finalizar</button>
                         </div>
@@ -93,23 +93,23 @@
         if(nome == "" || username == "" || email == "" || conf_email == "" || celular == ""){
             alert(`Preencha todos os campos!`)
         }
-        if(email.endsWith(`.com`) == false){
+        else if(email.endsWith(`.com`) == false){
             validacao.innerHTML+=`Email incorreto! <br>`
         }
-        if (username.indexOf(` `)== true){
+        else if (username.indexOf(` `)== true){
             validacao.innerHTML+=`Username não deve conter espaços!<br>`
         }
-        if((senha.length) < 8){
+        else if(senha.length < 8){
             validacao.innerHTML+=`A senha deve conter no mínimo 8 caracteres.<br>`
         }
-        if(conf_senha != senha){
+        else if(conf_senha != senha){
             validacao.innerHTML+=`As senhas não conferem.<br>`
         }
-        if(conf_email != email){
+       else if(conf_email != email){
             validacao.innerHTML+=`Os emails não conferem.<br>`
         }
-        if(celular.length != 11){
-            validacao.length+=`Celular inválido!<br>`
+        else if(celular.length != 11){
+            validacao.innerHTML+=`Celular inválido!<br>`
         }
     }
 
