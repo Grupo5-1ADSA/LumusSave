@@ -37,15 +37,15 @@
                         <h1>Login</h1>
                         <div class="campo">
                             
-                        <span> Usuário/E-mail: <br></span><input placeholder="example@example.com">
+                        <span> Usuário/E-mail: <br></span><input id="login_username" placeholder="example@example.com">
                         </div><br>
 
                         <div class="campo">
-                            <span> Senha:<br></span><input type="password" placeholder="**********">
+                            <span> Senha:<br></span><input id="login_senha" type="password" placeholder="**********">
                         </div><br>
 
                         <div id="botao">
-                            <button class="botao">Entrar</button>
+                            <button class="botao" onclick="botaoEntrar()">Entrar</button>
                         </div>
                 </div>
             </div>
@@ -63,3 +63,15 @@
 </div>
 </body>
 </html>
+
+<script>
+
+        function botaoEntrar(){
+            var login = login_username
+            var senha = login_senha.value
+
+            if(login == "" || senha == ""){
+                alert(`Login ou senha não podem estar em branco!`)
+            }
+        }
+</script>

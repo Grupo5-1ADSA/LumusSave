@@ -36,28 +36,29 @@
                 <div class="formulario">
                         <h1>Cadastre-se</h1>
                         <div class="campo">
-                        <span> Nome completo: <br></span><input placeholder="Nome + Sobrenome">
+                        <span> Nome completo: <br></span><input id="input_nome" placeholder="Nome + Sobrenome">
                         </div><br>
                         <div class="campo">
-                        <span> Nome de usuário: <br></span><input placeholder="Fácil e sem conter espaços!">
+                        <span> Nome de usuário: <br></span><input id="input_username" placeholder="Fácil e sem conter espaços!">
                         </div><br>
                         <div class="campo">
-                        <span> E-mail: <br></span><input placeholder="example@example.com">
+                        <span> E-mail: <br></span><input id="input_email" placeholder="example@example.com">
                         </div><br>
                         <div class="campo">
-                        <span> Confirme o e-mail: <br></span><input placeholder="example@example.com">
+                        <span> Confirme o e-mail: <br></span><input id="input_confemail" placeholder="example@example.com">
                         </div><br>
                         <div class="campo">
-                        <span> Senha:<br></span><input type="password" placeholder="**********">
+                        <span> Senha:<br></span><input id="input_senha" type="password" placeholder="**********">
                         </div><br>
                         <div class="campo">
-                        <span> Confirme a senha:<br></span><input type="password" placeholder="**********">
+                        <span> Confirme a senha:<br></span><input id="input_confsenha" type="password" placeholder="**********">
                         </div><br>
                         <div class="campo">
-                        <span> Telefone celular:<br></span><input type="tel" placeholder="(**)*****-****">
+                        <span> Telefone celular:<br></span><input id="input_celular" type="tel" placeholder="(**)*****-****">
                         </div><br>
+                        <span id="validacao" style="color:red"></span><br>
                         <div id="botao">
-                            <button class="botao">Finalizar</button>
+                        <button class="botao" onclick="botaoCadastro()">Finalizar</button>
                         </div>
                 </div>
             </div>
@@ -75,3 +76,41 @@
 </div>
 </body>
 </html>
+
+<script>
+
+    function botaoCadastro(){
+        var nome = input_nome.value
+        var username = input_username.value
+        var email = input_email.value
+        var conf_email = input_confemail.value
+        var senha = input_senha.value
+        var conf_senha = input_confsenha.value
+        var celular = input_celular.value
+
+        validacao.innerHTML="";
+
+        if(nome == "" || username == "" || email == "" || conf_email == "" || celular == ""){
+            alert(`Preencha todos os campos!`)
+        }
+        if(email.endsWith(`.com`) == false){
+            validacao.innerHTML+=`Email incorreto! <br>`
+        }
+        if (username.indexOf(` `)== true){
+            validacao.innerHTML+=`Username não deve conter espaços!<br>`
+        }
+        if((senha.length) < 8){
+            validacao.innerHTML+=`A senha deve conter no mínimo 8 caracteres.<br>`
+        }
+        if(conf_senha != senha){
+            validacao.innerHTML+=`As senhas não conferem.<br>`
+        }
+        if(conf_email != email){
+            validacao.innerHTML+=`Os emails não conferem.<br>`
+        }
+        if(celular.length != 11){
+            validacao.length+=`Celular inválido!<br>`
+        }
+    }
+
+</script>
