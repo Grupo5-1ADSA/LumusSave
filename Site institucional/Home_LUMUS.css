@@ -47,10 +47,11 @@ a{
     color: #F1FAFF;
     font-family: 'roboto';
 }
+
 .header{
     background: #0A5C6C;
     font-family: 'roboto';
-    
+    border-radius: 1px;
 }
 
 .header .container{
@@ -177,6 +178,7 @@ a{
     height: 100vh;
     width: 100%;
     background-color: #0A5C6C;
+    border-radius: 3px;
 }
 
 h2{
@@ -293,6 +295,7 @@ font-size: 19px;
 
 #fundoTexto{
     background-color: rgba(10,92,108,0.4);
-        padding: 15px;
+    padding: 18px;
+    border-radius: 10px;
 }
     
