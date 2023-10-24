@@ -115,10 +115,10 @@ a{
     font-style: italic;
 } 
 
-.formulario h1{
-    display: flex;
-    align-items: center;
+.forms h1{
+    grid-row: 1;
     color: #f0ca05;
+    
 }
 .botao {
     font-family: glacial;
@@ -142,14 +142,13 @@ a{
 }
 
 .card_cadastro {
-    width: 380px;
-    height: 730px;
+    width: 800px;
+    height: 520px;
     background-color: #0A5C6C;
     border-radius: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
+    justify-content: space-evenly;
     color: #5c5c5c;
 }
 .card_calculadora{
@@ -257,4 +256,29 @@ a{
 .img_calc{
     display: flex;
   
+}
+.formulario_cadastro{
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+}
+.forms{
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 700px;
+    grid-template-rows: auto;
+
+}
+.formulario_1{
+    grid-row: 2;
+}
+.formulario_2{
+    grid-row: 2;
+}
+#validacao{
+    grid-row: 3;
+    width: 200px;
+    height: 50px;
 }
