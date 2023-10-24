@@ -43,6 +43,7 @@
                         <div class="campo">
                             <span> Senha:<br></span><input id="login_senha" type="password" placeholder="**********">
                         </div><br>
+                        <div id="div_validacao_login"></div>
 
                         <div id="botao">
                             <button class="botao" onclick="botaoEntrar()">Entrar</button>
@@ -72,6 +73,9 @@
 
             if(login == "" || senha == ""){
                 alert(`Login ou senha não podem estar em branco!`)
+            }
+            else if(login != "anna.b"){
+                div_validacao_login.innerHTML
             }
         }
 </script>
