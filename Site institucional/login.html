@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title> 
-    <link rel="stylesheet" href="style_login.css"> 
+    <title>Login</title>
+    <link rel="stylesheet" href="style_login.css">
     <link rel="shortcut icon" href="public/assets/imgs/lampada-de-ideia.png" type="image/x-icon">
 
 </head>
@@ -29,60 +30,63 @@
     </div>
 
     <div class="div_home">
-            <div class="imagem_login">
-            <img src="public/assets/imgs/img_login.png"></div>
+        <div class="imagem_login">
+            <img src="public/assets/imgs/img_login.png">
+        </div>
         <div class="container">
-            
+
             <div class="card_login">
                 <div class="formulario">
-                        <h1>Login</h1>
-                        <div class="campo">
-                            
+                    <h1>Login</h1>
+                    <div class="campo">
+
                         <span> Usuário/E-mail: <br></span><input id="login_username" placeholder="example@example.com">
-                        </div><br>
+                    </div><br>
 
-                        <div class="campo">
-                            <h2> Senha:<br></h2>
-                            <input id="login_senha" type="password" placeholder="**********">
-                        </div><br>
-                        <div id="div_validacao_login" style="color:#f33838"></div>
+                    <div class="campo">
+                        <span> Senha:<br></span>
+                        <input id="login_senha" type="password" placeholder="**********">
+                    </div><br>
 
+                    <div class="elementos">
                         <div id="botao">
-                            <button class="botao" onclick="botaoEntrar()">Entrar</button>
+                            <button class="botao" onclick="botaoEntrar()"> Entrar</button>
                         </div>
+                        <div id="div_validacao_login" style="color:#f33838"></div>
+                    </div>
                 </div>
             </div>
         </div>
 
     </div>
-    
 
-<div class="footer">
-    <div class="container">
-        <h4>
-            Entre em contato conosco! &hearts; SPTECH &copy;
-        </h4>
-        <span class="version">v.1.0.0</span>
-</div>
+
+    <div class="footer">
+        <div class="container">
+            <h4>
+                Entre em contato conosco! &hearts; SPTECH &copy;
+            </h4>
+            <span class="version">v.1.0.0</span>
+        </div>
 </body>
+
 </html>
 
 <script>
 
-        function botaoEntrar(){
-            var login = login_username
-            var senha = login_senha.value
+    function botaoEntrar() {
+        var login = login_username.value
+        var senha = login_senha.value
 
-            div_validacao_login.innerHTML="";
+        if (login == "" || senha == "") {
+            alert(`Login ou senha não podem estar em branco!`)
 
-            if(login == "" || senha == ""){
-                alert(`Login ou senha não podem estar em branco!`)
-            }
-            if(login != "anna.b"){
-                div_validacao_login.innerHTML+= "Login inválido.<br>"
-            }
-            if(senha != "anna#2002"){
-                div_validacao_login.innerHTML+="Senha inválida.";
-            }
+        } else if (login != "anna.b" || senha != "anna#2002") {
+            div_validacao_login.innerHTML = "Login e/ou senha inválido(s)! <br>"
+
+         } else {
+           div_validacao_login.innerHTML = `<span> <a href="dashboards/DashGeral.html"</a></span>`
+         }
+           
         }
 </script>

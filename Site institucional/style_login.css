@@ -254,7 +254,7 @@ h1{
     justify-content: space-evenly;
     align-items: center;
     background: #3F949C;
-    height: 1400px;
+    height: 1080px;
 
 
 }
@@ -262,10 +262,21 @@ h1{
     align-items:end;
     display:block;
     justify-content: center;
-    margin-bottom: 400px;
+    margin-top: 20px;
     
 }
 .img_calc{
     display: flex;
   
+}
+.elementos{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
+    width: 300px;
+    
+}
+#div_validacao_login{
+    width: 120px;
 }
