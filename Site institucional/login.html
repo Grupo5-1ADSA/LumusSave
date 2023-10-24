@@ -43,7 +43,7 @@
                         <div class="campo">
                             <span> Senha:<br></span><input id="login_senha" type="password" placeholder="**********">
                         </div><br>
-                        <div id="div_validacao_login"></div>
+                        <div id="div_validacao_login" style="color:#f33838"></div>
 
                         <div id="botao">
                             <button class="botao" onclick="botaoEntrar()">Entrar</button>
@@ -71,11 +71,16 @@
             var login = login_username
             var senha = login_senha.value
 
+            div_validacao_login.innerHTML="";
+
             if(login == "" || senha == ""){
                 alert(`Login ou senha não podem estar em branco!`)
             }
-            else if(login != "anna.b"){
-                div_validacao_login.innerHTML
+            if(login != "anna.b"){
+                div_validacao_login.innerHTML+= "Login inválido.<br>"
+            }
+            if(senha != "anna#2002"){
+                div_validacao_login.innerHTML+="Senha inválida.";
             }
         }
 </script>
