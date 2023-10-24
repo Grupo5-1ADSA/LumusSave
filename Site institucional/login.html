@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title> 
-<link rel="stylesheet" href="style_login.css"> 
+    <link rel="stylesheet" href="style_login.css"> 
+    <link rel="shortcut icon" href="public/assets/imgs/lampada-de-ideia.png" type="image/x-icon">
 
 </head>
 
@@ -13,7 +14,7 @@
         <div class="navbar">
             <div class="div_esquerda">
                 <div><a href="calculadora.html">Calculadora</a></div>
-                <div>Sobre nós</div>
+                <div><a href="Home_LUMUS.html">Sobre nós</a></div>
             </div>
 
             <div class="div_centro">
@@ -37,15 +38,17 @@
                         <h1>Login</h1>
                         <div class="campo">
                             
-                        <span> Usuário/E-mail: <br></span><input placeholder="example@example.com">
+                        <span> Usuário/E-mail: <br></span><input id="login_username" placeholder="example@example.com">
                         </div><br>
 
                         <div class="campo">
-                            <span> Senha:<br></span><input type="password" placeholder="**********">
+                            <h2> Senha:<br></h2>
+                            <input id="login_senha" type="password" placeholder="**********">
                         </div><br>
+                        <div id="div_validacao_login" style="color:#f33838"></div>
 
                         <div id="botao">
-                            <button class="botao">Entrar</button>
+                            <button class="botao" onclick="botaoEntrar()">Entrar</button>
                         </div>
                 </div>
             </div>
@@ -63,3 +66,23 @@
 </div>
 </body>
 </html>
+
+<script>
+
+        function botaoEntrar(){
+            var login = login_username
+            var senha = login_senha.value
+
+            div_validacao_login.innerHTML="";
+
+            if(login == "" || senha == ""){
+                alert(`Login ou senha não podem estar em branco!`)
+            }
+            if(login != "anna.b"){
+                div_validacao_login.innerHTML+= "Login inválido.<br>"
+            }
+            if(senha != "anna#2002"){
+                div_validacao_login.innerHTML+="Senha inválida.";
+            }
+        }
+</script>

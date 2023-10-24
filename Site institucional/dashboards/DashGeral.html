@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficos informativos</title>
+    <link rel="stylesheet" href="Dashboards.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="shortcut icon" href="icone/lampada-de-ideia.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="area">
+
+        <!-- barra lateral -->
+            <div class="barlateral">
+            
+                <div class="item_barLateral"><a href="D:\Estudos\Estudos-Sptech\Projeto e Inovção\LUMUS\Site institucional\Home_LUMUS.html"><img src="D:\Estudos\Estudos-Sptech\Projeto e Inovção\LUMUS\Site institucional\public\assets\imgs\logo_lumus.png" alt="logo_lumus"></a></div>
+                
+                <div class="item_barLateral usuario"><img src="d:\Estudos\Estudos-Sptech\Projeto e Inovção\LUMUS\Site institucional\public\assets\imgs\menina.png" alt="">Olá, Anna!<br> Qual ambiente será visualizado?</div>
+
+                <div class="item_barLateral"><a href="DashGeral.html"><u style="color: rgb(255, 223, 141);">Geral</u></a></div>
+
+                <div class="ambiente"><a href="dashMarketing.html">Sala Marketing</a></div>
+
+                <div class="item_barLateral"><a href="dashHarvey.html">Sala Harvey</a></div>
+
+                <div class="item_barLateral"><a href="dashSalaReuniao.html">Sala de Reunião</a></div>
+
+                <div class="item_barLateral"><a href="dashRefeitorio.html">Refeitório</a></div>
+
+                <div class="item_barLateral"><a href="dashsalaFernando.html">Sala Fernando</a></div>
+
+            </div>
+
+            <!-- Area dos graficos: -->
+
+            <div class="graficos">
+                
+                <div id="div_atual">
+                    <h1> Neste momento </h1>
+                    <canvas id="grafico_barrasLaterais"></canvas>
+                </div>
+                <div class="linhaDivisao"></div>
+                <div id="div_economiaGeral">
+                    <h1>Média de consumo diário</h1>
+                    <canvas id="grafico_linhas2"></canvas>
+                    
+                </div>
+            </div>
+    </div>  
+</body>
+
+</html>
+<script>
+    const ctx = document.getElementById('grafico_barrasLaterais');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Harvey', 'Presidência', 'Refeitório', 'Fernando', 'Reunião'],
+            datasets: [{
+                label: 'LUX',
+                backgroundColor: '#FFDE59',               
+                data: [45, 98, 68, 78, 78],
+                
+                borderWidth: 2                
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#CFDEF1'
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        color: '#44595B'
+                    },
+                    ticks: {
+                        color: '#CFDEF1'
+                    }
+                    
+                },
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: '#44595B'
+                    },
+                    ticks: {
+                        color: '#CFDEF1'
+                    }
+                }
+            }
+        }
+    });
+
+    const ctx2 = document.getElementById('grafico_linhas2');
+
+    new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ['1', '2', '3', '3', '4', '5','6','7','8','9','10','11','12','13','14','15'],
+  datasets: [
+  {
+      label: 'Dia',
+      data: [300, 460, 480, 350, 300, 260, 280, 220, 280, 250, 250, 220, 200, 170, 190, 180],
+      backgroundColor: '#FFDE59',
+      stack: 'Stack 0',
+      borderWidth: '100px'
+    },
+    {
+      label: 'Noite',
+      data: [510, 560, 520, 450, 450, 450, 500, 620, 540, 580, 450, 600, 570, 660, 260, 300],
+      backgroundColor: '#0000ff',
+      stack: 'Stack 0',
+      borderWidth: '100px'
+    },
+    {
+      label: 'Economia',
+      data: [190, 0, 0, 200, 250, 290, 220, 160, 180, 170, 300, 180, 230, 170, 550, 520 ],
+      backgroundColor: 'rgb(70,210,60)',
+      stack: 'Stack 0',
+      borderWidth: '100px'
+    },
+  ]
+},
+        
+        options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#fff'
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        color: '#44595B'
+                    },
+                    ticks: {
+                        color: '#CFDEF1'
+                    },
+                    stacked: true
+                },
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: '#44595B'
+                    },
+                    ticks: {
+                        color: '#CFDEF1'
+                    },
+                    stacked: true
+                }
+            }
+        }
+    });
+
+    </script>

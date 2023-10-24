@@ -1,0 +1,138 @@
+/* Fonte da navbar  */
+@font-face {
+    font-family: 'glacial';
+    src: url(fonts/glacial-indifference/GlacialIndifference-Regular.otf) format(opentype);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'apollo';
+    src: url("fonts/apollo/APOLLO.otf") format(opentype);
+    font-weight: normal;
+}
+
+body{
+padding: 0;
+margin: 0;
+}
+
+.area{
+    width: 100vw;    
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1 2;
+    background-color: #30303A
+
+}
+
+a{
+    text-decoration: none;
+    color: #f1faff;
+    font-family: 'glacial';
+}
+
+.barlateral{
+height: 100vh;
+width: 16vw;
+background-color: #0A5C6C;
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: space-evenly;
+justify-self: left;
+grid-column: 1;
+}
+
+
+.usuario img{
+    width: 30px;
+    height: auto;
+    margin-right: 9px;
+    
+}
+
+.usuario{
+    margin-left: 20px;
+}
+
+.item_barLateral {
+    font-family: 'glacial';
+    color: #f1faff;
+}
+
+.graficos{
+width: 78vw;
+height: 88vh;
+background-color:#1A1A25;
+grid-column: 2;
+align-self: center;
+display: grid;
+grid-template-columns: 3;
+justify-content: space-around;
+border-radius: 5px;
+}
+
+h1{
+    font-family: 'apollo';
+    color: #F0CA05;
+}
+
+.linhaDivisao{
+    height: 100%;
+    width: 1px;
+    background-color: #f1faff;
+    grid-column: 2;
+}
+
+/* Final base gráficos*/
+
+/* Grafico do momento */
+
+#div_atual{
+    margin: 30px 25px 40px;
+    grid-column: 1;
+    height: 520px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#div_economiaGeral{
+    margin: 30px;
+    height: 520px;
+    width: 450px;
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Graficos locais */
+
+.div_graficoEsquerda{
+    margin: 40px 25px 40px;
+    grid-column: 1;
+    height: 520px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.div_graficoDireita{
+    margin: 66px 25px 40px;
+    grid-column: 3;
+    height: 520px;
+    width: 450px;
+}
+
+.titulos{
+    width: 100%;
+}
+

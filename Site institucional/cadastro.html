@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Cadastro</title> 
 <link rel="stylesheet" href="style_login.css"> 
+<link rel="shortcut icon" href="public/assets/imgs/lampada-de-ideia.png" type="image/x-icon">
+
 
 </head>
 
@@ -13,7 +17,7 @@
         <div class="navbar">
             <div class="div_esquerda">
                 <div><a href="calculadora.html">Calculadora</a></div>
-                <div>Sobre nós</div>
+                <div><a href="Home_LUMUS.html">Sobre nós</a></div>
             </div>
 
             <div class="div_centro">
@@ -28,50 +32,107 @@
     </div>
 
     <div class="div_home">
-            <div class="imagem_login">
-            <img src="public/assets/imgs/img_login.png"></div>
+        <div class="imagem_login">
+            <img src="public/assets/imgs/img_login.png">
+        </div>
         <div class="container">
-            
+
             <div class="card_cadastro">
-                <div class="formulario">
-                        <h1>Cadastre-se</h1>
+                <div class="forms">
+                    <h1>Cadastre-se</h1>
+                    <div class="formulario_1">
+
                         <div class="campo">
-                        <span> Nome completo: <br></span><input placeholder="Nome + Sobrenome">
+                            <span> Nome completo: <br></span><input id="input_nome" placeholder="Nome + Sobrenome">
                         </div><br>
                         <div class="campo">
-                        <span> Nome de usuário: <br></span><input placeholder="Fácil e sem conter espaços!">
+                            <span> Nome de usuário: <br></span><input id="input_username"
+                                placeholder="Fácil e sem conter espaços!">
                         </div><br>
                         <div class="campo">
-                        <span> E-mail: <br></span><input placeholder="example@example.com">
+                            <span> E-mail: <br></span><input id="input_email" placeholder="example@example.com">
                         </div><br>
                         <div class="campo">
-                        <span> Confirme o e-mail: <br></span><input placeholder="example@example.com">
+                            <span> Confirme o e-mail: <br></span><input id="input_confemail"
+                                placeholder="example@example.com">
+                        </div><br>
+                    </div>
+                    <div class="formulario_2">
+                        <div class="campo">
+                            <span> Senha:<br></span><input id="input_senha" type="password" placeholder="**********">
                         </div><br>
                         <div class="campo">
-                        <span> Senha:<br></span><input type="password" placeholder="**********">
+                            <span> Confirme a senha:<br></span><input id="input_confsenha" type="password"
+                                placeholder="**********">
                         </div><br>
                         <div class="campo">
-                        <span> Confirme a senha:<br></span><input type="password" placeholder="**********">
+                            <span> Telefone celular:<br></span><input id="input_celular" type="tel"
+                                placeholder="(**)*****-****">
                         </div><br>
-                        <div class="campo">
-                        <span> Telefone celular:<br></span><input type="tel" placeholder="(**)*****-****">
-                        </div><br>
+
                         <div id="botao">
-                            <button class="botao">Finalizar</button>
+                            <button class="botao" onclick="botaoCadastro()">Finalizar</button>
+
                         </div>
+                    </div>
+                    <div id="validacao" style="color:#f33838"></div>
                 </div>
+                
             </div>
         </div>
 
     </div>
-    
 
-<div class="footer">
-    <div class="container">
-        <h4>
-            Entre em contato conosco! &hearts; SPTECH &copy;
-        </h4>
-        <span class="version">v.1.0.0</span>
-</div>
+
+    <div class="footer">
+        <div class="container">
+            <h4>
+                Entre em contato conosco! &hearts; SPTECH &copy;
+            </h4>
+            <span class="version">v.1.0.0</span>
+        </div>
 </body>
+
 </html>
+
+<script>
+
+    function botaoCadastro() {
+        var nome = input_nome.value
+        var username = input_username.value
+        var email = input_email.value
+        var conf_email = input_confemail.value
+        var senha = input_senha.value
+        var conf_senha = input_confsenha.value
+        var celular = input_celular.value
+        var alerta = "";
+
+        validacao.innerHTML = "";
+
+        if (nome == "" || username == "" || email == "" || conf_email == "" || celular == "") {
+            alert(`Preencha todos os campos!`)
+        }
+        else if (email.endsWith(`.com`) == false) {
+            validacao.innerHTML += `Email incorreto! <br>`
+        }
+ 
+        else if (conf_email != email) {
+            validacao.innerHTML += `Os emails não conferem.<br>`
+        }
+        else if (username.indexOf(` `)>0){
+            validacao.innerHTML+=`Username não deve conter espaços!<br>`
+
+        }
+        
+        else if (senha.length < 8) {
+            validacao.innerHTML += `A senha deve conter no mínimo 8 caracteres.<br>`
+        }
+        else if (conf_senha != senha) {
+            validacao.innerHTML += `As senhas não conferem.<br>`
+        }
+        else if (celular.length != 11) {
+            validacao.innerHTML += `Celular inválido!<br>`
+        }
+    }
+
+</script>

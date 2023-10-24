@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="Home_LUMUS.css"/>
+    <link rel="stylesheet" href="Home_LUMUS.css" />
+    <link rel="shortcut icon" href="public/assets/imgs/lampada-de-ideia.png" type="image/x-icon">
 
 </head>
 
@@ -14,9 +15,9 @@
         <div class="navbar">
             <div class="div_esquerda">
 
-                <div><a href="#valores"> Sobre nós</a></div>
-
                 <div><a href="calculadora.html">Calculadora</a></div>
+
+                <div><a href="#valores"> Sobre nós</a></div>
 
             </div>
 
@@ -25,8 +26,8 @@
             </div>
 
             <div class="div_direita">
-                <div><a href="login.html" target="_blank">Login</a></div>
-                <div><a href="cadastro.html" target="_blank">Cadastre-se</a></div>
+                <div><a href="login.html">Login</a></div>
+                <div><a href="cadastro.html">Cadastre-se</a></div>
             </div>
         </div>
     </div>
@@ -39,23 +40,23 @@
             <div class="lema_lumus">
                 <img src="public/assets/imgs/Lema.png">
 
-                <button>Conheça nossos produtos</button>
+                <button><a href="#div_imagem1">Conheça nossos produtos</a></button>
             </div>
         </div>
 
         <div id="valores" class="div_valores">
-            
+
             <h2>Sobre nós</h2>
-            
-                <div class="titulos">
-                    <h3>Nossa Missão</h3>
-                    <h3>Nossos valores</h3>
-                    <h3>Nossos compromissos</h3>
-                </div>
-            
+
+            <div class="titulos">
+                <h3>Missão</h3>
+                <h3>Valores</h3>
+                <h3>Compromissos </h3>
+            </div>
+
             <div class="boxes_valores">
                 <div class="box missão">
-                    
+                    <img src="public/assets/imgs/meta.png">
                     <p>
                         Na era atual, em que a preocupação com o meio ambiente
                         e a eficiência energética estão no centro das discussões
@@ -63,7 +64,7 @@
                         em oferecer soluções inovadoras para otimizar o uso de
                         energia e reduzir custos de escritórios e empresas.<br>
                         <strong>Somos a resposta para um mundo que busca preservar recursos
-                        e construir um futuro mais verde.</strong><br>
+                            e construir um futuro mais verde.</strong><br>
                         Pretendemos capacitar nossos clientes a serem
                         líderes na economia de energia,
                         através de nossas soluções inteligentes
@@ -75,7 +76,8 @@
                     </p>
                 </div>
                 <div class="box valores">
-                    
+
+                    <img src="public/assets/imgs/retencao.png">
 
                     <h4>Sustentabilidade Ambiental:</h4>
                     <p>
@@ -97,9 +99,11 @@
 
                     </p>
                 </div>
-                
+
                 <div class="box compromisso">
-                    
+
+                    <img src="public/assets/imgs/compromisso.png">
+
                     <h4>Economia Financeira:</h4>
                     <p>
                         Reduzir o consumo de energia não
@@ -114,7 +118,7 @@
                         oferecemos as soluções mais
                         avançadas e eficazes.
                         Parceria de Longo Prazo:
-                        Estamos comprometidos em ser seu
+                        estamos comprometidos em ser seu
                         parceiro de confiança em economia
                         de energia, adaptando nossos
                         serviços às suas necessidades
@@ -123,25 +127,39 @@
                 </div>
             </div>
         </div>
+
         <!-- Produtos e serviços: -->
-        
-            <div class="div_produtos">
-                <h2>Produtos e serviços</h2>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati facere tempora quo? Qui, magni
-                necessitatibus culpa quas et voluptatum est quibusdam quis provident neque repellat nam sunt maiores totam
-                omnis.
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, similique officiis est exercitationem,
-                inventore et sed totam distinctio non, aspernatur laborum? Eos, ab. Dicta reiciendis, omnis tenetur unde tempore
-                nobis.
-        
+
+        <div class="div_produtos">
+
+            <div id="div_imagem1">
+                <img src="public/assets/imgs/Inserir um título.png">
             </div>
-    
+
+            <div id="div_textoProduto">
+                <h2>Produtos e serviços</h2>
+                <br>
+                <div id="fundoTexto">
+                    <p>Nosso produto e serviço se dão através do coração do nosso projeto, sensores de luminosidade e
+                        controle da intensidade da luz.</p>
+                    <p>A partir destes valores conseguimos monitorar o índice de luminosidade dos ambientes e visualizar
+                        quando um ambiente está com excesso ou escassez de luminosidade, além de conseguir mensurar
+                        quantitativamente a melhor maneira de ajustar intensidade das luzes de acordo com as horas do
+                        dia.</p>
+                    <p>Diminuindo a intensidade das luzes em horas do dia em que a incidência da luz é maior ou até
+                        mesmo quando espaços estão sendo menos utilizados, podemos gerar uma redução de 20% a 30% do
+                        custo da fatura de energia mensal.</p>
+                </div>
+            </div>
+
+        </div>
+
 
 
 
     </div>
 
-    
+
     <div class="footer">
         <div class="container">
             <h4>
@@ -150,7 +168,7 @@
             <span class="version">v.1.0.0</span>
         </div>
 
-        
+
 
 </body>
 

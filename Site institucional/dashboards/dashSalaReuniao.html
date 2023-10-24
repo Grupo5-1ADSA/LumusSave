@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficos informativos</title>
+    <link rel="stylesheet" href="Dashboards.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="shortcut icon" href="icone/lampada-de-ideia.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="area">
+
+        <!-- barra lateral -->
+            <div class="barlateral">
+            
+                <div class="ambiente"><a href="D:\Estudos\Estudos-Sptech\Projeto e Inovção\LUMUS\Site institucional\Home_LUMUS.html"><img src="D:\Estudos\Estudos-Sptech\Projeto e Inovção\LUMUS\Site institucional\public\assets\imgs\logo_lumus.png" alt="logo_lumus"></a></div>
+
+                <div class="item_barLateral usuario"><img src="d:\Estudos\Estudos-Sptech\Projeto e Inovção\LUMUS\Site institucional\public\assets\imgs\menina.png" alt="">Olá, Anna!<br> Qual ambiente será visualizado?</div>
+
+                <div class="ambiente"><a href="DashGeral.html">Geral</a></div>
+
+                <div class="ambiente"><a href="dashMarketing.html">Sala Marketing</a></div>
+
+                <div class="ambiente"><a href="dashHarvey.html">Sala Harvey</a></div>
+
+                <div class="ambiente"><a href="dashSalaReuniao.html"><u style="color: rgb(255, 223, 141);">Sala de Reunião</u></a></div>
+
+                <div class="ambiente"><a href="dashRefeitorio.html">Refeitório</a></div>
+
+                <div class="ambiente"><a href="dashsalaFernando.html">Sala Fernando</a></div>
+
+            </div>
+
+            <!-- Area dos graficos: -->
+            <div class="graficos">
+                <div class="div_graficoEsquerda">
+                    <div class="titulos"><h1> Em uso </h1></div>
+                    <div style="height: 380px;"><canvas id="grafico_donut"></canvas></div>
+                </div>
+                <div class="linhaDivisao"></div>
+                <div class="div_graficoDireita">
+                    <h1>Uso do dia</h1>
+                    <canvas id="grafico_linhas2"></canvas>
+                </div>
+            </div>
+        </div>
+    </body>
+    
+    </html>
+    
+    <script>
+        const ctx = document.getElementById('grafico_donut');
+    
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    'Ligado',
+                    'Repouso'
+                ],
+                datasets: [{
+                    label: 'LUX(%)',
+                    backgroundColor: ['#F0CA05',
+                        'rgba(100,100,250,1)'],
+                    borderColor: 'rgb(10,10,50)',
+                    data: [0, 100],
+                    hoverOffset: 15
+                }]
+            },
+            options: {
+                plugins: {
+                legend: {
+                    labels: {
+                        color: '#fff'
+                    }
+                }
+            },
+                scales: {
+                },
+            }
+        });
+    
+        const ctx2 = document.getElementById('grafico_linhas2');
+    
+        new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['9h', '10h', '11h', '12h', '13h', '14h', '15h', '16h', '17h', '18h', '19h', '20h', '21h'],
+                datasets: [{
+                    label: 'LUX',
+                    backgroundColor: '#F0CA05',
+                    borderColor: '#FFDE59',
+                    data: [10, 10, 10, 10, 10, 350, 340, 345, 60, 10, 10, 10, 500],
+                    borderWidth: 1.8,
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                plugins: {
+                legend: {
+                    labels: {
+                        color: '#fff'
+                    }
+                }
+            },
+                scales: {
+                    x: {
+                        grid: {
+                            color: '#44595B'
+                        },
+                        ticks: {
+                            color: '#CFDEF1'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: '#44595B'
+                        },
+                        ticks: {
+                            color: '#CFDEF1'
+                        }
+                    }
+                }
+            }
+        });
+    
+    </script>
