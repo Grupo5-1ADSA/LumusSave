@@ -1,12 +1,12 @@
 /* Fonte da navbar  */
 @font-face {
-    font-family: 'glacial';
+    font-family: 'roboto';
     src: url("public/assets/fonts/Roboto/Roboto-Regular.ttf") format(opentype);
     font-weight: normal;
 }
 
 @font-face {
-    font-family: 'apollo';
+    font-family: 'exo';
     src: url(public/assets/fonts/Exo_2/Exo2-VariableFont_wght.ttf) format(opentype);
     font-weight: normal;
 }
@@ -32,7 +32,7 @@ html{
 }
 
 body{
-    font-family: 'glacial';
+    font-family: 'roboto';
     margin: 0;
     padding: 0;
 }
@@ -45,11 +45,11 @@ body{
 a{
     text-decoration: none;
     color: #F1FAFF;
-    font-family: 'glacial';
+    font-family: 'roboto';
 }
 .header{
     background: #0A5C6C;
-    font-family: 'glacial';
+    font-family: 'roboto';
     
 }
 
@@ -141,15 +141,14 @@ a{
     height: 45px;
     color: #F1FAFF;
     font-size: 15px;
-    border-radius: 9%;
     align-self: flex-end;
-    font-family: 'glacial';
+    font-family: 'roboto';
     cursor: pointer;
     align-items: center;
     border: 0;
     border-radius: 20px;
     background-color:#0A5C6C;
-    ;
+    margin-bottom: 60px;
     
 }
 
@@ -190,7 +189,7 @@ h2{
     align-self: center;
     margin: 10px 0px 15px 0px;
     color: #F0CA05;
-    font-family: 'apollo';
+    font-family: 'exo';
 }
 
 
@@ -201,7 +200,7 @@ h2{
     align-items: center;
     margin-bottom: 5px;
     color: #F1FAFF;
-    font-family: 'vanilla';
+    font-family: 'exo';
 }
 
 .boxes_valores{
@@ -294,6 +293,6 @@ font-size: 19px;
 
 #fundoTexto{
     background-color: rgba(10,92,108,0.4);
-    padding: 15px;
+        padding: 15px;
 }
     

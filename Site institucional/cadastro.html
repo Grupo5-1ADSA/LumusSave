@@ -96,7 +96,7 @@
         else if(email.endsWith(`.com`) == false){
             validacao.innerHTML+=`Email incorreto! <br>`
         }
-        else if (username.indexOf(` `)== true){
+        else if (username.indexOf(` `)>0){
             validacao.innerHTML+=`Username não deve conter espaços!<br>`
         }
         else if(senha.length < 8){
