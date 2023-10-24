@@ -69,12 +69,12 @@ align-self: center;
 display: grid;
 grid-template-columns: 3;
 justify-content: space-around;
+border-radius: 5px;
 }
 
 h1{
     font-family: 'apollo';
     color: #F0CA05;
-    justify-self: center;
 }
 
 .linhaDivisao{
@@ -89,18 +89,26 @@ h1{
 /* Grafico do momento */
 
 #div_atual{
-    margin: 40px 25px 40px;
+    margin: 30px 25px 40px;
     grid-column: 1;
     height: 520px;
     width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
 #div_economiaGeral{
+    margin: 30px;
     height: 520px;
     width: 450px;
     grid-column: 3;
-    align-self: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Graficos locais */
@@ -110,14 +118,21 @@ h1{
     grid-column: 1;
     height: 520px;
     width: 450px;
-    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .div_graficoDireita{
-    margin: 40px 25px 40px;
+    margin: 66px 25px 40px;
     grid-column: 3;
     height: 520px;
     width: 450px;
-    
 }
+
+.titulos{
+    width: 100%;
+}
+

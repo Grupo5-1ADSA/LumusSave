@@ -11,6 +11,19 @@
     font-weight: normal;
 }
 
+body::-webkit-scrollbar {
+    width: 12px;               /* largura da scroll */
+}
+
+body::-webkit-scrollbar-track {
+    background: #0A5C6C;        /* cor da área de trás da scroll */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #F0CA05;    /* cor da barra móvel da scroll */
+    border-radius: 20px;       /* borda arredondada */
+    border: 3px solid #3F949C;  /* padding */
+}
 
 
 /* Ajustes gerais */
@@ -32,6 +45,7 @@ body{
 a{
     text-decoration: none;
     color: #F1FAFF;
+    font-family: 'glacial';
 }
 .header{
     background: #0A5C6C;
@@ -86,10 +100,11 @@ a{
 .div_home {
 
     background: #3F949C;
-    height: 2150px;
+    height: auto;
     display: grid;
     grid-template-rows: 1 1;
-    
+    justify-content: center;
+    align-content: center;
 }
 
 /* inicio site */
@@ -100,9 +115,11 @@ a{
     display: grid;
     grid-template-columns: 1 1;
     grid-template-rows: 3;
-    margin: 0 10px 0;
-    height: 85vh;
+    margin: 0 10px 40px;
+    height: 90vh;
     width: auto;
+    align-items: start;
+    
 }
 
 .div_home .container .lema_lumus {
@@ -122,7 +139,6 @@ a{
     position: absolute;
     width: 150px;
     height: 45px;
-    
     color: #F1FAFF;
     font-size: 15px;
     border-radius: 9%;
@@ -245,13 +261,13 @@ font-size: 19px;
 }
 
  .div_produtos h2{
-    width: 750px;
+    width: 715px;
     height: 100px;
     grid-column: 2;
 }
 
 #div_imagem1 {
-    grid-column: 1
+    grid-column: 1;
 }
 
 .div_produtos img {
@@ -262,11 +278,22 @@ font-size: 19px;
 
 #div_textoProduto {
     grid-column: 2;
+    height: 634px;
     margin: 0 30px 25px 30px;
     font-size: 23px;
     color: #F1FAFF;
+    padding: 15px;
+    border-radius: 10px;
+
 }
 
-#div_textoProduto p{
-    background-color: 
+/* #div_textoProduto p{
+    
+} */
+
+
+#fundoTexto{
+    background-color: rgba(10,92,108,0.4);
+    padding: 15px;
 }
+    
