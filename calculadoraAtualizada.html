@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora financeira - Lumus </title>
      <link rel="stylesheet" href="style_login.css"> 
-     <link rel="shortcut icon" href="public/assets/imgs/lampada-de-ideia.png" type="image/x-icon">
 </head>
 
 
@@ -97,7 +96,7 @@
 
         var porcentagemFluorescente = custo_fluorescente * 0.35;
          // A LÂMPADA INTELIGENTE GASTA 65% MENOS ENERGIA EM RELAÇÃO Á LÂMPADA FLUORESCENTE
-         var economiaMensalFLuorescente = custo_fluorescente - porcentagemFluorescente;
+         var economiaMensalFluorescente = custo_fluorescente - porcentagemFluorescente;
 
         var porcentagemLED = custo_LED * 0.75;
          // A LÂMPADA INTELIGENTE GASTA 25% MENOS ENERGIA EM RELAÇÃO À LÂMPADA LED CONVENCIONAL
@@ -105,7 +104,7 @@
         
 
         var calculoLucroIncandescente = custoLampadaInteligente / economiaMensalIncandescente;
-        var calculoLucroFluorescente = custoLampadaInteligente / economiaMensalFLuorescente;
+        var calculoLucroFluorescente = custoLampadaInteligente / economiaMensalFluorescente;
         var calculoLucroLED = custoLampadaInteligente / economiaMensalLED;
 
         div1.innerHTML="";
@@ -116,22 +115,19 @@
                 if (tipoLampada == 'Incandescente') {
                     div1.innerHTML = `
                     Tempo de funcionamento: <b> ${horasDeUso}h </b><br>
-                    Você gasta cerca de R$<b>${custo_incandescente.toFixed(2)}</b> mensalmente com suas lâmpadas atuais. Com nossas lâmpadas inteligentes você gastaria apenas R$<b>${porcentagemIncandescente.toFixed(2)}</b> pelo mesmo consumo e teria uma economia de R$<b>${economiaMensalIncandescente.toFixed(2)}</b> por mês.<br> Para adquiri-las você investirá cerca de R$<b>${custoLampadaInteligente.toFixed(2)}</b> e dentro de <b>${calculoLucroIncandescente.toFixed(0)} meses </b> você começará a ter lucro. <br><br>
-                    Acesse o link abaixo para adquiri-las agora mesmo! 
+                    Você gasta cerca de R$<b>${custo_incandescente.toFixed(2)}</b> mensalmente com suas lâmpadas atuais. Com nossas lâmpadas inteligentes você gastaria apenas R$<b>${porcentagemIncandescente.toFixed(2)}</b> pelo mesmo consumo e teria uma economia de R$<b>${economiaMensalIncandescente.toFixed(2)}</b> por mês.<br> Para adquiri-las você investirá cerca de R$<b>${custoLampadaInteligente.toFixed(2)}</b> e dentro de <b>${calculoLucroIncandescente.toFixed(0)} meses </b> você começará a ter lucro! <br><br> 
                     `
                 } 
                 if (tipoLampada == 'Fluorescente') {
                     div1.innerHTML = `
                     Tempo de funcionamento: <b>${horasDeUso}h </b><br>
-                    Você gasta cerca de R$<b>${custo_fluorescente.toFixed(2)}</b> mensalmente com suas lâmpadas atuais. Com nossas lâmpadas inteligentes você gastaria apenas R$<b>${porcentagemFluorescente.toFixed(2)}</b> pelo mesmo consumo e teria uma economia de R$<b>${economiaMensalFLuorescente.toFixed(2)}</b> por mês.<br> Para adquiri-las você investirá cerca de R$<b>${custoLampadaInteligente.toFixed(2)}</b> e dentro de <b>${calculoLucroFluorescente.toFixed(0)} meses </b> você começará a ter lucro. <br><br>
-                    Acesse o link abaixo para adquiri-las agora mesmo!
+                    Você gasta cerca de R$<b>${custo_fluorescente.toFixed(2)}</b> mensalmente com suas lâmpadas atuais. Com nossas lâmpadas inteligentes você gastaria apenas R$<b>${porcentagemFluorescente.toFixed(2)}</b> pelo mesmo consumo e teria uma economia de R$<b>${economiaMensalFluorescente.toFixed(2)}</b> por mês.<br> Para adquiri-las você investirá cerca de R$<b>${custoLampadaInteligente.toFixed(2)}</b> e dentro de <b>${calculoLucroFluorescente.toFixed(0)} meses </b> você começará a ter lucro! <br><br>
                     `
                 }
                 if (tipoLampada == 'LED') {
                     div1.innerHTML = `
                     Tempo de funcionamento: <b>${horasDeUso}h </b><br>
                     Você gasta cerca de R$<b>${custo_LED.toFixed(2)}</b> mensalmente com suas lâmpadas atuais. Com nossas lâmpadas inteligentes você gastaria apenas R$<b>${porcentagemLED.toFixed(2)}</b> pelo mesmo consumo e teria uma economia de R$ <b>${economiaMensalLED.toFixed(2)}</b> por mês.<br> Para adquiri-las você investirá cerca de R$<b>${custoLampadaInteligente.toFixed(2)}</b> e dentro de <b> ${calculoLucroLED.toFixed(0)} meses </b> você começará a ter lucro! <br><br>
-                    Acesse o link abaixo para adquiri-las agora mesmo!
                     `
                 }   
             } else (

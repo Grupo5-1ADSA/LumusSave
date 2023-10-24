@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="style_login.css">
+
+    <title>Cadastro</title> 
+<link rel="stylesheet" href="style_login.css"> 
+<link rel="shortcut icon" href="public/assets/imgs/lampada-de-ideia.png" type="image/x-icon">
+
 
 </head>
 
@@ -112,12 +115,15 @@
         else if (email.endsWith(`.com`) == false) {
             validacao.innerHTML += `Email incorreto! <br>`
         }
+ 
         else if (conf_email != email) {
             validacao.innerHTML += `Os emails não conferem.<br>`
         }
-        else if (username.indexOf(` `) == true) {
-            validacao.innerHTML += `Username não deve conter espaços!<br>`
+        else if (username.indexOf(` `)>0){
+            validacao.innerHTML+=`Username não deve conter espaços!<br>`
+
         }
+        
         else if (senha.length < 8) {
             validacao.innerHTML += `A senha deve conter no mínimo 8 caracteres.<br>`
         }

@@ -1,13 +1,19 @@
 /* Fonte da navbar  */
 @font-face{
-    font-family: 'glacial' ;
-    src: url("public/assets/glacial-indifference/GlacialIndifference-Regular.otf") format(opentype);
+    font-family: 'roboto' ;
+    src: url("public/assets/fonts/Roboto/Roboto-Regular.ttf") format(opentype);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url("public/assets/fonts/Exo_2/Exo2-VariableFont_wght.ttf") format(opentype);
     font-weight: normal;
 }
 
 /* Ajustes gerais */
 body{
-    font-family: 'glacial';
+    font-family: 'roboto';
     margin: 0;
     padding: 0;
 }
@@ -22,7 +28,7 @@ a{
 }
 .header{
     background: #0A5C6C;
-    font-family: 'glacial';
+    font-family: 'roboto';
     
 }
 
@@ -68,7 +74,8 @@ a{
     width: 140px;   
 }
 
-/* Apenas cor */
+/* Começo calculadora */
+
 .div_home {
 
     display: flex;
@@ -77,6 +84,10 @@ a{
     background: #3F949C;
     height: 750px;
 
+}
+
+h1{
+    font-family: 'exo';
 }
 
 
@@ -121,7 +132,7 @@ a{
     
 }
 .botao {
-    font-family: glacial;
+    font-family: 'roboto';
     cursor: pointer;
     align-items: center;
     border: 0;
@@ -212,7 +223,7 @@ a{
 }
 
 .botao_calculadora{
-    font-family: glacial;
+    font-family: 'roboto';
     cursor: pointer;
     align-items: center;
     border: 0;
