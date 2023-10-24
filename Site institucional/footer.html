@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rodapé com Contatos</title>
+    <style>
+    @font-face {
+    font-family: 'glacial';
+    src: url("public/assets/glacial-indifference/GlacialIndifference-Regular.otf") format(opentype);
+    font-weight: normal;
+}
+
+    @font-face {
+    font-family: 'vanilla';
+    src: url(public/assets/fonts/glacial-indifference/GlacialIndifference-Regular.otf) format(opentype);
+    font-weight: normal;
+}
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        footer {
+            background-color: #0A5C6C;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            height: 250px;
+            
+        }
+
+        #contatos {
+            /* text-align: right; */
+            margin: 0 40px;
+            display: flex;
+            height: 250px;
+            justify-content: space-between;
+            
+
+        }
+
+        #contatos h2 {
+            color: #fff;
+            text-align: left;
+            margin: 10 40px;
+            
+        }
+
+        #contatos h3 {
+            color: #fff;
+            text-align: left;
+            margin: 10 40px;
+            
+        }
+        
+        #contatos span {
+            color: #d0b30b;
+         
+        }
+
+        #contatos a {
+            color: #fff;
+            text-decoration: none;
+            margin: 12px 0;
+        }
+
+        #contatos a:hover {
+            text-decoration: underline;
+        }
+
+        #data-atual {
+            font-size: 12px;
+            text-align: right;
+        }
+
+        #VoltarAoTopo button{
+            font-size: medium;
+            background-color: #d0b30b;
+            color: #ffffff;
+            border-radius: 70px;
+            padding: 10px 20px;
+            margin-top: 110px;
+           
+        }
+
+    
+        #data-atual {
+            margin: 0 20px;
+           color: #d1c1c1;
+        }
+
+        #contatos2 {
+            text-align: left;
+            display: flex;
+            align-items: end;
+            position: relative;
+            top: 90px;
+            color: #d1c1c1;
+            font-size: smaller;
+        }
+
+        #links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 400px;
+        height: auto;
+        justify-content: space-evenly;
+        font-size: 18px;
+
+        }
+        
+        #coluna_direita {
+            
+            display: flex;
+            flex-direction: column;
+            margin: 20px 20px;
+        }
+
+        #coluna_esquerda {
+       
+            display: flex;
+            flex-direction: column;
+        }
+
+        a img {
+            width: 20px;
+            margin: 0 10px;
+
+        }
+    </style>
+</head>
+<body>
+
+<footer>
+    <div id="contatos">
+
+        <div id="titulos">
+            <p><h2> LUMUS <span>SENSE</span> | &copy; </h2></p>
+            <p><h3> Entre em contato conosco! </h3>
+
+                <div id="contatos2">
+                    <p> 2023, by LUMUS SENSE LTDA  </p>  <br> 
+                </div>
+                
+        </div>
+
+      
+
+       
+        
+        <div id="links">
+           
+            <div id="coluna_direita">
+                <h4>Contatos</h4>
+                <a href="mailto:seuemail@example.com">  <img src="public/assets/icons/icons8-email-50.png" alt=""> Email </a> 
+                <a href="tel:+551234567890"><img src="public/assets/icons/icons8-phones-64.png" alt=""> Telefone </a> 
+                <a href="telegram" target="_blank"> <img src="public/assets/icons/icons8-twitterx-50.png" alt=""> Telegram </a> 
+               
+            </div>
+
+            <div id="coluna_esquerda">
+                <h4>Sociais</h4>
+                <a href="instagram"><img src="public/assets/icons/icons8-instagram-50.png" alt="">Instagram</a> 
+                <a href="GitHub"><img src="public/assets/icons/icons8-github-50.png" alt=""> GitHub </a> 
+                <a href="https://www.linkedin.com/seuperfil" target="_blank"> <img src="public/assets/icons/icons8-linkedin-50.png" alt=""> LinkedIn </a> 
+            </div>
+        </div>
+        
+            <div id="VoltarAoTopo"> 
+            <button onclick="voltarHome">Voltar ao Topo</button> <br> 
+            <p id="data-atual"> Data: </p>
+            </div>
+           
+      
+    </div>
+ 
+ 
+</footer>
+
+<script>
+    // JavaScript para exibir a data atual
+    var dataAtual = new Date();
+    var dia = dataAtual.getDate();
+    var mes = dataAtual.getMonth() + 1; // Os meses em JavaScript começam de 0 (janeiro) a 11 (dezembro)
+    var ano = dataAtual.getFullYear();
+
+    var dataFormatada = dia + '/' + mes + '/' + ano;
+
+    document.getElementById('data-atual').textContent += dataFormatada;
+</script>
+
+</body>
+</html>
