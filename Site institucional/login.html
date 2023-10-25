@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title> 
-    <link rel="stylesheet" href="style_login.css"> 
+    <title>Login</title>
+    <link rel="stylesheet" href="style_login.css">
     <link rel="shortcut icon" href="public/assets/imgs/lampada-de-ideia.png" type="image/x-icon">
 
 </head>
@@ -29,60 +30,112 @@
     </div>
 
     <div class="div_home">
-            <div class="imagem_login">
-            <img src="public/assets/imgs/img_login.png"></div>
+        <div class="imagem_login">
+            <img src="public/assets/imgs/img_login.png">
+        </div>
         <div class="container">
-            
+
             <div class="card_login">
                 <div class="formulario">
-                        <h1>Login</h1>
-                        <div class="campo">
-                            
+                    <h1>Login</h1>
+                    <div class="campo">
+
                         <span> Usuário/E-mail: <br></span><input id="login_username" placeholder="example@example.com">
-                        </div><br>
+                    </div><br>
 
-                        <div class="campo">
-                            <h2> Senha:<br></h2>
-                            <input id="login_senha" type="password" placeholder="**********">
-                        </div><br>
-                        <div id="div_validacao_login" style="color:#f33838"></div>
+                    <div class="campo">
+                        <span> Senha:<br></span>
+                        <input id="login_senha" type="password" placeholder="**********">
+                    </div><br>
 
+                    <div class="elementos">
                         <div id="botao">
-                            <button class="botao" onclick="botaoEntrar()">Entrar</button>
+                            <button class="botao" onclick="botaoEntrar()"> Entrar</button>
                         </div>
+                        <div id="div_validacao_login" style="color:#f33838"></div>
+                    </div>
                 </div>
             </div>
         </div>
 
     </div>
-    
 
-<div class="footer">
-    <div class="container">
-        <h4>
-            Entre em contato conosco! &hearts; SPTECH &copy;
-        </h4>
-        <span class="version">v.1.0.0</span>
-</div>
+
+ <!-- Footer -->
+
+ <footer>
+    <div id="contatos">
+
+        <div id="titulos">
+            <p><h2> LUMUS <span>SENSE</span></h2></p>
+            <p><h3> Entre em contato conosco! </h3>
+
+                <div id="contatos2">
+                    <p> 2023, by LUMUS SENSE LTDA &copy;  </p>  <br> 
+                </div>
+                
+        </div>
+  
+        <div id="links">
+           
+            <div id="coluna_direita">
+                <h4>Contatos</h4>
+                <a href="mailto:seuemail@example.com">  <img src="public/assets/icons/icons8-email-50.png" alt=""> Email </a> 
+                <a href="tel:+551234567890"><img src="public/assets/icons/icons8-phones-64.png" alt=""> Telefone </a> 
+                <a href="telegram" target="_blank"> <img src="public/assets/icons/icons8-twitterx-50.png" alt=""> Telegram </a> 
+               
+            </div>
+
+            <div id="coluna_esquerda">
+                <h4>Sociais</h4>
+                <a href="instagram"><img src="public/assets/icons/icons8-instagram-50.png" alt="">Instagram</a> 
+                <a href="GitHub"><img src="public/assets/icons/icons8-github-50.png" alt=""> GitHub </a> 
+                <a href="https://www.linkedin.com/seuperfil" target="_blank"> <img src="public/assets/icons/icons8-linkedin-50.png" alt=""> LinkedIn </a> 
+            </div>
+        </div>
+        
+            <div id="VoltarAoTopo"> 
+            <p id="data-atual"> Data: </p>
+            </div>
+           
+      
+    </div>
+ 
+ 
+</footer>
+
+
 </body>
+
 </html>
 
 <script>
+    // JavaScript para exibir a data atual
+    var dataAtual = new Date();
+    var dia = dataAtual.getDate();
+    var mes = dataAtual.getMonth() + 1; // Os meses em JavaScript começam de 0 (janeiro) a 11 (dezembro)
+    var ano = dataAtual.getFullYear();
 
-        function botaoEntrar(){
-            var login = login_username
-            var senha = login_senha.value
+    var dataFormatada = dia + '/' + mes + '/' + ano;
 
-            div_validacao_login.innerHTML="";
+    document.getElementById('data-atual').textContent += dataFormatada;
+</script>
 
-            if(login == "" || senha == ""){
-                alert(`Login ou senha não podem estar em branco!`)
-            }
-            if(login != "anna.b"){
-                div_validacao_login.innerHTML+= "Login inválido.<br>"
-            }
-            if(senha != "anna#2002"){
-                div_validacao_login.innerHTML+="Senha inválida.";
-            }
+<script>
+
+    function botaoEntrar() {
+        var login = login_username.value
+        var senha = login_senha.value
+
+        if (login == "" || senha == "") {
+            alert(`Login ou senha não podem estar em branco!`)
+
+        } else if (login != "anna.b" || senha != "anna#2002") {
+            div_validacao_login.innerHTML = "Login e/ou senha inválido(s)! <br>"
+
+         } else {
+           window.location.href= "dashboards/DashGeral.html";
+         }
+           
         }
 </script>

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="header">
+    <div id="inicioPagina" class="header">
         <div class="navbar">
             <div class="div_esquerda">
 
@@ -159,17 +159,67 @@
 
     </div>
 
+    <!-- Footer -->
 
-    <div class="footer">
-        <div class="container">
-            <h4>
-                Entre em contato conosco! &hearts; SPTECH &copy;
-            </h4>
-            <span class="version">v.1.0.0</span>
+    <footer>
+        <div id="contatos">
+    
+            <div id="titulos">
+                <p><h2> LUMUS <span>SENSE</span></h2></p>
+                <p><h3> Entre em contato conosco! </h3>
+    
+                    <div id="contatos2">
+                        <p> 2023, by LUMUS SENSE LTDA &copy;  </p>  <br> 
+                    </div>
+                    
+            </div>
+      
+            <div id="links">
+               
+                <div id="coluna_direita">
+                    <h4>Contatos</h4>
+                    <a href="mailto:seuemail@example.com">  <img src="public/assets/icons/icons8-email-50.png" alt=""> Email </a> 
+                    <a href="tel:+551234567890"><img src="public/assets/icons/icons8-phones-64.png" alt=""> Telefone </a> 
+                    <a href="telegram" target="_blank"> <img src="public/assets/icons/icons8-twitterx-50.png" alt=""> Telegram </a> 
+                   
+                </div>
+    
+                <div id="coluna_esquerda">
+                    <h4>Sociais</h4>
+                    <a href="instagram"><img src="public/assets/icons/icons8-instagram-50.png" alt="">Instagram</a> 
+                    <a href="GitHub"><img src="public/assets/icons/icons8-github-50.png" alt=""> GitHub </a> 
+                    <a href="https://www.linkedin.com/seuperfil" target="_blank"> <img src="public/assets/icons/icons8-linkedin-50.png" alt=""> LinkedIn </a> 
+                </div>
+            </div>
+            
+                <div id="VoltarAoTopo"> 
+                <button><a href="#inicioPagina">Voltar ao Topo</a> </button> 
+                <br> 
+                <p id="data-atual"> Data: </p>
+                </div>
+               
+          
         </div>
-
+     
+     
+    </footer>
 
 
 </body>
 
+</html>
+
+<script>
+    // JavaScript para exibir a data atual
+    var dataAtual = new Date();
+    var dia = dataAtual.getDate();
+    var mes = dataAtual.getMonth() + 1; // Os meses em JavaScript começam de 0 (janeiro) a 11 (dezembro)
+    var ano = dataAtual.getFullYear();
+
+    var dataFormatada = dia + '/' + mes + '/' + ano;
+
+    document.getElementById('data-atual').textContent += dataFormatada;
+</script>
+
+</body>
 </html>
