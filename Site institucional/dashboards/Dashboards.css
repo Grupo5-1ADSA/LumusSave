@@ -1,13 +1,13 @@
 /* Fonte da navbar  */
 @font-face {
-    font-family: 'glacial';
-    src: url(fonts/glacial-indifference/GlacialIndifference-Regular.otf) format(opentype);
+    font-family: 'roboto';
+    src: url(fonts/Roboto/Roboto-Regular.ttf) format(opentype);
     font-weight: normal;
 }
 
 @font-face {
-    font-family: 'apollo';
-    src: url("fonts/apollo/APOLLO.otf") format(opentype);
+    font-family: 'exo';
+    src: url("fonts/Exo_2/Exo2-VariableFont_wght.ttf") format(opentype);
     font-weight: normal;
 }
 
@@ -28,7 +28,7 @@ margin: 0;
 a{
     text-decoration: none;
     color: #f1faff;
-    font-family: 'glacial';
+    font-family: 'roboto';
 }
 
 .barlateral{
@@ -56,7 +56,7 @@ grid-column: 1;
 }
 
 .item_barLateral {
-    font-family: 'glacial';
+    font-family: 'roboto';
     color: #f1faff;
 }
 
@@ -73,7 +73,7 @@ border-radius: 5px;
 }
 
 h1{
-    font-family: 'apollo';
+    font-family: 'exo';
     color: #F0CA05;
 }
 

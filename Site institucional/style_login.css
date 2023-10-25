@@ -1,6 +1,6 @@
 /* Fonte da navbar  */
-@font-face{
-    font-family: 'roboto' ;
+@font-face {
+    font-family: 'roboto';
     src: url("public/assets/fonts/Roboto/Roboto-Regular.ttf") format(opentype);
     font-weight: normal;
 }
@@ -12,39 +12,61 @@
 }
 
 /* Ajustes gerais */
-body{
+
+body::-webkit-scrollbar {
+    width: 12px;               /* largura da scroll */
+}
+
+body::-webkit-scrollbar-track {
+    background: #0A5C6C;        /* cor da área de trás da scroll */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #F0CA05;    /* cor da barra móvel da scroll */
+    border-radius: 20px;       /* borda arredondada */
+    border: 3px solid #3F949C;  /* padding */
+}
+
+::selection {
+    background-color: #F0CA05;
+    color: white;
+}
+
+
+body {
     font-family: 'roboto';
     margin: 0;
     padding: 0;
 }
 
-html{
- scroll-behavior: smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
 }
-.header{
+
+.header {
     background: #0A5C6C;
     font-family: 'roboto';
-    
+
 }
 
-.header .container{
+.header .container {
     width: 80%;
     margin: auto;
 }
 
 /* Formatação da navbar para alinhar os itens */
-.header .navbar{
+.header .navbar {
     display: grid;
     grid-template-columns: 1 1 1;
     color: #F1FAFF;
 }
 
-.div_esquerda{
+.div_esquerda {
     width: 546.4px;
     grid-column: 1;
     display: flex;
@@ -54,14 +76,14 @@ a{
 }
 
 
-.div_centro{
+.div_centro {
     grid-column: 2;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.div_direita{
+.div_direita {
     width: 546.4px;
     display: flex;
     justify-content: space-around;
@@ -70,8 +92,8 @@ a{
 }
 
 /* Logo Lumus: */
-.header img{   
-    width: 140px;   
+.header img {
+    width: 140px;
 }
 
 /* Começo calculadora */
@@ -86,8 +108,9 @@ a{
 
 }
 
-h1{
+h1 {
     font-family: 'exo';
+    color: #f0ca05;
 }
 
 
@@ -96,6 +119,7 @@ h1{
     align-items: center;
 
 }
+
 .card_login {
     width: 360px;
     height: 330px;
@@ -107,14 +131,16 @@ h1{
     flex-direction: column;
     color: #5c5c5c;
 }
-.campo span{
+
+.campo span {
     color: white;
     align-items: right;
     padding: 3%;
-    
+
 
 }
-.campo input{
+
+.campo input {
     display: flex;
     justify-content: center;
     width: 260px;
@@ -122,15 +148,15 @@ h1{
     border-radius: 20px;
     border-style: none;
     outline: none;
-    padding:  0% 5%;
+    padding: 0% 5%;
     font-style: italic;
-} 
-
-.formulario h1{
-    display: flex;
-    align-items: center;
-    color: #f0ca05;
 }
+
+.forms h1 {
+    grid-row: 1;
+
+}
+
 .botao {
     font-family: 'roboto';
     cursor: pointer;
@@ -142,28 +168,30 @@ h1{
     background-color: #3F949C;
     width: 100px;
     height: 30px;
-    
+
 }
+
 .imagem_login img {
     height: 500px;
     width: 500px;
 }
-.imagem_login{
+
+.imagem_login {
     display: flex;
 }
 
 .card_cadastro {
-    width: 380px;
-    height: 730px;
+    width: 800px;
+    height: 520px;
     background-color: #0A5C6C;
     border-radius: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
+    justify-content: space-evenly;
     color: #5c5c5c;
 }
-.card_calculadora{
+
+.card_calculadora {
     width: 1000px;
     height: 520px;
     display: flex;
@@ -171,10 +199,11 @@ h1{
     border-radius: 20px;
     align-items: center;
     justify-content: center;
-    
-    
+
+
 }
-.formulario_calculadora h1{
+
+.formulario_calculadora h1 {
     grid-row: 1;
     text-align: center;
     justify-content: center;
@@ -182,48 +211,53 @@ h1{
 
 
 }
-.formulario_calculadora input{
+
+.formulario_calculadora input {
     display: flex;
-    justify-content:left;
+    justify-content: left;
     width: 100px;
     height: 30px;
     border-radius: 20px;
     border-style: none;
     outline: none;
-    padding:  0% 5%;
+    padding: 0% 5%;
     font-style: italic;
 }
-.formulario_calculadora select{
+
+.formulario_calculadora select {
     display: flex;
     width: 160px;
     height: 30px;
     border-radius: 20px;
     border-style: none;
     outline: none;
-    padding:  0% 4%;
+    padding: 0% 4%;
     font-style: italic;
 }
+
 .container .card_calculadora {
     display: flex;
     align-items: center;
     text-justify: auto;
 
 }
-.formulario_calculadora .div_itens{
+
+.formulario_calculadora .div_itens {
     display: flex;
     align-items: center;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     flex-direction: column;
     margin-top: 5px;
-   
-}
-.imagem_calculadora img{
-   width: 183.2px;
-   height: 377.38px;
-   margin-right: 40px;
+
 }
 
-.botao_calculadora{
+.imagem_calculadora img {
+    width: 183.2px;
+    height: 377.38px;
+    margin-right: 40px;
+}
+
+.botao_calculadora {
     font-family: 'roboto';
     cursor: pointer;
     align-items: center;
@@ -234,20 +268,23 @@ h1{
     background-color: #3F949C;
     width: 100px;
     height: 30px;
-    
+
 }
-.span_texto{
+
+.span_texto {
     margin-top: 5px;
 }
-.div_resultado{
+
+.div_resultado {
     width: 1000px;
     height: 320px;
     border-radius: 20px;
     align-items: center;
     justify-content: center;
-    font-size: 30px;  
-    
+    font-size: 30px;
+
 }
+
 .div_home_calculadora {
 
     display: flex;
@@ -258,25 +295,162 @@ h1{
 
 
 }
-.container_calculadora{
-    align-items:end;
-    display:block;
+
+.container_calculadora {
+    align-items: end;
+    display: block;
     justify-content: center;
     margin-top: 20px;
-    
+
 }
-.img_calc{
+
+.img_calc {
     display: flex;
-  
+
 }
-.elementos{
+
+.elementos {
     display: flex;
     align-items: center;
     justify-content: space-around;
     height: 50px;
     width: 300px;
+}
+
+#div_validacao_login {
+    width: 120px;
+}
+
+
+.forms {
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 700px;
+    grid-template-rows: auto;
+}
+
+.formulario_1 {
+    grid-row: 2;
+}
+
+.formulario_2 {
+    grid-row: 2;
+}
+
+#validacao {
+    grid-row: 3;
+    width: 200px;
+    height: 50px;
+}
+
+/* Footer */
+
+footer {
+    background-color: #0A5C6C;
+    color: #fff;
+    text-align: center;
+    padding: 20px 20px 0 20px;
+    height: 250px;
     
 }
-#div_validacao_login{
-    width: 120px;
+
+
+#contatos {
+    margin: 0 40px;
+    display: flex;
+    height: 220px;
+    justify-content: space-between;
+
+}
+
+#contatos h2 {
+    font-size: 40px;
+    color: #fff;
+    text-align: left;
+
+}
+
+#contatos h3 {
+    color: #fff;
+    text-align: left;
+
+}
+
+#contatos span {
+    color: #d0b30b;
+ 
+}
+
+#contatos a {
+    color: #fff;
+    text-decoration: none;
+    margin: 12px 0;
+}
+
+#contatos a:hover {
+    text-decoration: underline;
+}
+
+#data-atual {
+    font-size: 12px;
+    text-align: right;
+}
+
+#VoltarAoTopo button{
+    background-color: #F0CA05;
+    color: #F1FAFF;
+    margin: 110px 0 30px 0;
+    width: 150px;
+    height: 45px;
+    color: #F1FAFF;
+    font-size: 15px;
+    font-family: 'roboto';
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#data-atual {
+    margin: 0 20px;
+   color: #d1c1c1;
+}
+
+#contatos2 {
+    text-align: left;
+    display: flex;
+    align-items: end;
+    position: relative;
+    
+    color: #d1c1c1;
+    font-size: smaller;
+}
+
+#links {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 400px;
+height: auto;
+justify-content: space-evenly;
+font-size: 18px;
+
+}
+
+#coluna_direita {
+    
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px;
+}
+
+#coluna_esquerda {
+
+    display: flex;
+    flex-direction: column;
+}
+
+a img {
+    width: 20px;
+    margin: 0 10px;
 }
