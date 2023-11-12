@@ -216,12 +216,19 @@ h1 {
 
 }
 
+.formulario_calculadora{
+    height: 100%;
+}
+
 .formulario_calculadora h1 {
     grid-row: 1;
     text-align: center;
     justify-content: center;
     color: #f0ca05;
+}
 
+.subtitulo{
+    color:#F1FAFF ;
 }
 
 .formulario_calculadora input {
@@ -234,6 +241,8 @@ h1 {
     outline: none;
     padding: 0% 5%;
     font-style: italic;
+    margin: 5px 0 8px 0;
+    background-color: rgb(242, 250, 170);
 }
 
 .formulario_calculadora select {
@@ -245,6 +254,8 @@ h1 {
     outline: none;
     padding: 0% 4%;
     font-style: italic;
+    margin: 5px 0 8px 0;
+    background-color: rgb(242, 252, 170);
 }
 
 .container .card_calculadora {
@@ -257,9 +268,10 @@ h1 {
 .formulario_calculadora .div_itens {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-direction: column;
     margin-top: 5px;
+    color:#F1FAFF
 
 }
 
@@ -287,6 +299,7 @@ h1 {
     margin-top: 5px;
 }
 
+
 .div_resultado {
     width: 1000px;
     height: 520px;
@@ -294,17 +307,44 @@ h1 {
     display: none;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 23px;
 
-    background-color: #F1FAFF;
+    background-color: #fafcc9;
     position: fixed;
     opacity: 0.95;
     border: #f0ca05 4px solid;
     text-align: justify;
-    padding: 30px;
-    top: 75px
+    top: 90px
 }
 
+#div_informacao{
+    height: 100%;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.divisaoResultado{
+    margin: 10px 24px;
+    font-size: 19px;
+    line-height: 2;
+}
+
+#botao_fechar{
+    width: auto;
+    position: absolute;
+    top: 20px;
+    left: 950px;
+    
+}
+
+#botao_fechar img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
 
 
 .container_calculadora {

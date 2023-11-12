@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,14 +42,15 @@
                 <div class="formulario_calculadora">
                     <h1>Calculadora Financeira</h1>
 
-                    <h2>Descubra a economia mensal na sua conta de luz!</h2>
+                    <h2 class="subtitulo">Descubra a economia mensal na sua conta de luz!</h2>
 
                     <div class="div_itens">
                         <span class="span_texto">Quantidade de lâmpadas utilizadas no ambiente: </span>
-                        <input type="number" id="input_qtdLampadas" min="1" placeholder="Exemplo: 60">
+                        <input id="input_qtdLampadas" min="1" placeholder="Exemplo: 60">
 
                         <span class="span_texto">Qual o tipo de lâmpada utilizada?</span>
                         <select id="select_tipoLampada">
+                            <option value="vazio">Selecione</option>
                             <option value="Incandescente">Incandescente</option>
                             <option value="Fluorescente">Fluorescente</option>
                             <option value="LED">LED</option>
@@ -56,18 +58,20 @@
 
                         <span class="span_texto">Qual o plano desejado?</span>
                         <select id="select_Plano">
-                            <option value="PlanoMensal">Mensal (R$40/Mês)</option>
-                            <option value="PlanoSemestral">Semestral (R$30/Mês)</option>
-                            <option value="PlanoAnual">Anual (R$25/Mês)</option>
+                            <option value="vazio"> Selecione </option>
+                            <option value="PlanoMensal">Mensal (R$30/Mês)</option>
+                            <option value="PlanoSemestral">Semestral (R$27/Mês)</option>
+                            <option value="PlanoAnual">Anual (R$20/Mês)</option>
                         </select>
 
                         <span class="span_texto">Horário de abertura do local (00h-23h):</span>
-                        <input id="input_abertura" type="number" min="0" max="23" placeholder="Ex:8">
-                        <span class="span_texto">Horário de saída/fechamento do local (00h-23h):</span>
-                        <input id="input_fechamento" type="number" min="0" max="23" placeholder="Ex:18"><br>
+                        <input id="input_abertura" min="0" max="23" placeholder="Ex:8">
+                        <span class="span_texto">Horário de fechamento do local (00h-23h):</span>
+                        <input id="input_fechamento" min="0" max="23" placeholder="Ex:18"><br>
 
-                        <button onclick="calcularResultado()" class="botao_calculadora"> <a href="#div1">
-                                Resultado</a></button>                                                  
+                        <button onclick="calcularResultado()" class="botao_calculadora">
+                            Resultado </button>
+
                     </div>
                 </div>
             </div>
@@ -75,10 +79,12 @@
 
         <!-- RESULTADO -->
         <div id="div_resultado" class="div_resultado">
-        <div id="div1" >
-          <button onclick="fechar()">fechar</button>
-        </div>  
+            <div id="div_informacao"> </div>
+
+            <div id="botao_fechar" onclick="fechar()"><img src="public/assets/imgs/fechar.png" ></div >
+
         </div>
+    </div>
     </div>
 
     <!-- Footer -->
