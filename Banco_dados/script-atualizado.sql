@@ -58,12 +58,12 @@ insert into empresas values
 (null, 'Samsung', '00.280.273/0002-18', 'Eletrônicos','Av. Dr Chucre Zaidan, 1240 Diamond Tower, Morumbi Corporate - Vila Cordeiro');
 
 insert into ambienteEmpresa (nomeAmbiente, alertaVermelho, alertaAmarelo, alertaVerde, fkempresa_ambiente) values
-('Ambiente1', 'Alto', 'Médio', 'Baixo', 1),
-('Ambiente2', 'Alto', 'Médio', 'Baixo', 2),
-('Ambiente3', 'Alto', 'Médio', 'Baixo', 3),
-('Ambiente4', 'Alto', 'Médio', 'Baixo', 1),
-('Ambiente5', 'Alto', 'Médio', 'Baixo', 2),
-('Ambiente6', 'Alto', 'Médio', 'Baixo', 3);
+('escritorio', 'Alto', 'Médio', 'Baixo', 1),
+('refeitorio', 'Alto', 'Médio', 'Baixo', 2),
+('corredor', 'Alto', 'Médio', 'Baixo', 3),
+('banheiro', 'Alto', 'Médio', 'Baixo', 1),
+('salaReuniao', 'Alto', 'Médio', 'Baixo', 2),
+('salaTrabalho', 'Alto', 'Médio', 'Baixo', 3);
 
 INSERT INTO sensor (descricaoPosicao, fkambiente_sensor)
 VALUES
