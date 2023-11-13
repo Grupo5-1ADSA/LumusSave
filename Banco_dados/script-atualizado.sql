@@ -82,25 +82,25 @@ select * from empresas;
 select * from empresas join usuario on fkempresa=idEmpresa; 
 
 --exibir todos os dados da tabela ambienteEmpresa e dadosSensor
-SELECT * FROM ambienteEmpresa 
-JOIN sensor 
+select * from ambienteEmpresa 
+join sensor 
     ON ambienteEmpresa.idAmbiente = sensor.fkambiente_sensor
 
 --exibir todos os dados da tabela ambienteempresa, sensor e dadosSensor
-SELECT * FROM ambienteEmpresa 
-JOIN sensor 
+select * from ambienteEmpresa 
+join sensor 
     ON ambienteEmpresa.idAmbiente = sensor.fkambiente_sensor
-JOIN dadosSensor 
+join dadosSensor 
     ON sensor.serialNumber = dadosSensor.fkSensor;
 
 --exibir o valor máximo e minimo da tabela dadosSensor
-SELECT MAX(valorLux) AS ValorMaximo, MIN(valorLux) AS ValorMinimo FROM dadosSensor;
+select MAX(valorLux) AS ValorMaximo, MIN(valorLux) AS ValorMinimo from dadosSensor;
 
 --exibir a quantidade de valorLux da tabela dadosSensor que é maior ou igual a um alerta vermelho
-SELECT COUNT(*) AS Quantidade
-FROM dadosSensor
-JOIN sensor 
+select COUNT(*) AS Quantidade
+from dadosSensor
+join sensor 
     ON dadosSensor.fkSensor = sensor.serialNumber
-JOIN ambienteEmpresa 
+from ambienteEmpresa 
     ON sensor.fkambiente_sensor = ambienteEmpresa.idAmbiente
-WHERE dadosSensor.valorLux >= ambienteEmpresa.alertaVermelho;
+where dadosSensor.valorLux >= ambienteEmpresa.alertaVermelho;
