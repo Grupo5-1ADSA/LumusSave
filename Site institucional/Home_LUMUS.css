@@ -108,7 +108,6 @@ a{
     background: #3F949C;
     height: auto;
     display: grid;
-    grid-template-rows: 1 1;
     justify-content: center;
     align-content: center;
 }
@@ -117,10 +116,7 @@ a{
 
 
 .div_home .container {
-    grid-row: 1 ;
     display: grid;
-    grid-template-columns: 1 1;
-    grid-template-rows: 3;
     margin: 0 10px 40px;
     height: 90vh;
     width: auto;
@@ -178,8 +174,6 @@ a{
     grid-row: 2;
     margin: 0 0px 10px;
     display: grid;
-    grid-template-columns: 1 1 1;
-    grid-template-rows: 1 1 2;
     height: 100vh;
     width: 100%;
     background-color: #0A5C6C;
@@ -190,8 +184,6 @@ h2{
     height: 100px;
     width: 430px;
     font-size: 80px ;
-    grid-row: 1;
-    grid-column: 1;
     justify-self: center;
     align-self: center;
     margin: 10px 0px 15px 0px;
@@ -201,7 +193,6 @@ h2{
 
 
 .titulos{
-    grid-row: 2;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -211,7 +202,6 @@ h2{
 }
 
 .boxes_valores{
-    grid-row: 3;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -256,10 +246,8 @@ font-size: 19px;
 
 /* Seção Produtos e serviços */
 .div_produtos{
-    grid-row: 3;
     margin: 0 0px 10px;
     display: grid;
-    grid-template-columns: 2;
     height: 100vh;
     width: 100%;     
 }
@@ -267,16 +255,15 @@ font-size: 19px;
  .div_produtos h2{
     width: 715px;
     height: 100px;
-    grid-column: 2;
 }
 
 #div_imagem1 {
-    grid-column: 1;
+    height: 100%;
 }
 
 .div_produtos img {
     width: 40vw;
-    height: auto;
+    height: 100%;
     border-radius: 10px;
 }
 
@@ -295,6 +282,120 @@ font-size: 19px;
     background-color: rgba(10,92,108,0.4);
     padding: 18px;
     border-radius: 10px;
+}
+
+/* Planos */
+
+#section_planos{
+    height: 100vh;
+    width: 100%;
+    background-color: #08292f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#conteiner_planos{
+    width: 99%;
+    height: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+    text-align: center;
+}
+
+#tabela{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F1FAFF;
+    width: 75%;
+
+}
+
+.coluna{
+    width: 200px;
+    height: 99%;
+    border: dashed 1px #F0CA05;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+
+}
+
+#conteiner_planos li{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom:12px ;
+}
+
+#conteiner_planos li img{
+    height: 40px;
+}
+
+#valores_planos{
+    width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.box_plano{
+    width: 100%;
+    background-color: #F1FAFF;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box_plano:hover{
+ width: 203px;
+ background-color: #F1FAFF;
+ opacity: 0.99;
+ transition: 0.2s;
+ cursor: pointer;
+ box-shadow:  1px 1px 1px 1px #F0CA05;
+}
+
+.anual{
+    height: 28%;
+}
+
+.anual:hover{
+    height: 31%;
+
+}
+
+.semestral{
+    height: 25%;
+}
+
+.semestral:hover{
+    height: 27%;
+
+}
+
+.mensal{
+    height: 23%;
+}
+
+.mensal:hover{
+    height: 25%;
+
+}
+
+.titulo_plano{
+    font-size: 25px;
 }
 
 /* Footer */
