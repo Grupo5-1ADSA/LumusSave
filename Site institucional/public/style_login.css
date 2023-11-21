@@ -370,6 +370,14 @@ h1 {
 
 #div_validacao_login {
     width: 120px;
+    font-weight: bold;
+    color: red;
+}
+
+.forms #validacao {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
 }
 
 
