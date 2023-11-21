@@ -1,51 +1,51 @@
- // JavaScript para exibir a data atual
- var dataAtual = new Date();
- var dia = dataAtual.getDate();
- var mes = dataAtual.getMonth() + 1; // Os meses em JavaScript começam de 0 (janeiro) a 11 (dezembro)
- var ano = dataAtual.getFullYear();
+// JavaScript para exibir a data atual
+var dataAtual = new Date();
+var dia = dataAtual.getDate();
+var mes = dataAtual.getMonth() + 1; // Os meses em JavaScript começam de 0 (janeiro) a 11 (dezembro)
+var ano = dataAtual.getFullYear();
 
- var dataFormatada = dia + '/' + mes + '/' + ano;
+var dataFormatada = dia + '/' + mes + '/' + ano;
 
- document.getElementById('data-atual').textContent += dataFormatada;
+document.getElementById('data-atual').textContent += dataFormatada;
 
 
 
- function botaoCadastro() {
-     var nome = input_nome.value
-     var username = input_username.value
-     var email = input_email.value
-     var conf_email = input_confemail.value
-     var senha = input_senha.value
-     var conf_senha = input_confsenha.value
-     var celular = input_celular.value
-     var alerta = "";
+function botaoCadastro() {
+  var nome = input_nome.value
+  var username = input_username.value
+  var email = input_email.value
+  var conf_email = input_confemail.value
+  var senha = input_senha.value
+  var conf_senha = input_confsenha.value
+  var celular = input_celular.value
+  var alerta = "";
 
-     validacao.innerHTML = "";
+  validacao.innerHTML = "";
 
-     if (nome == "" || username == "" || email == "" || conf_email == "" || celular == "") {
-         alert(`Preencha todos os campos!`)
-     }
-     else if (email.endsWith(`.com`) == false) {
-         validacao.innerHTML += `Email incorreto! <br>`
-     }
+  if (nome == "" || username == "" || email == "" || conf_email == "" || senha == "" || conf_senha == "" || celular == "") {
+    alert(`Preencha todos os campos!`)
+  }
+  else if (email.endsWith(`.com`) == false) {
+    validacao.innerHTML += `Email incorreto! <br>`
+  }
 
-     else if (conf_email != email) {
-         validacao.innerHTML += `Os emails não conferem.<br>`
-     }
-     else if (username.indexOf(` `)>0){
-         validacao.innerHTML+=`Username não deve conter espaços!<br>`
+  else if (conf_email != email) {
+    validacao.innerHTML += `Os emails não conferem.<br>`
+  }
+  else if (username.indexOf(` `) > 0) {
+    validacao.innerHTML += `Username não deve conter espaços!<br>`
 
-     } else if (senha.length < 8) {
-         validacao.innerHTML += `A senha deve conter no mínimo 8 caracteres.<br>`
-     }
-     else if (conf_senha != senha) {
-         validacao.innerHTML += `As senhas não conferem.<br>`
-     }
-     else if (celular.length != 11) {
-         validacao.innerHTML += `Celular inválido!<br>`
-     } else {
-      alert(`Cadastro realizado`);
-     }
+  } else if (senha.length < 8) {
+    validacao.innerHTML += `A senha deve conter no mínimo 8 caracteres.<br>`
+  }
+  else if (conf_senha != senha) {
+    validacao.innerHTML += `As senhas não conferem.<br>`
+  }
+  else if (celular.length != 11) {
+    validacao.innerHTML += `Celular inválido!<br>`
+  } else {
+    alert(`Cadastro realizado com sucesso`);
+  }
 
 
 
@@ -111,7 +111,6 @@
 
 function sumirMensagem() {
   cardErro.style.display = "none";
- }
+}
 
- 
- 
+
