@@ -84,7 +84,7 @@ select * from empresas join usuario on fkempresa=idEmpresa;
 -- exibir todos os dados da tabela ambienteEmpresa e dadosSensor
 select * from ambienteEmpresa 
 join sensor 
-    ON ambienteEmpresa.idAmbiente = sensor.fkambiente_sensor
+    ON ambienteEmpresa.idAmbiente = sensor.fkambiente_sensor;
 
 -- exibir todos os dados da tabela ambienteempresa, sensor e dadosSensor
 select * from ambienteEmpresa 
@@ -108,3 +108,9 @@ where dadosSensor.valorLux >= ambienteEmpresa.alertaVermelho;
 
 -- alteraçoes maycon
 select * from usuario;
+
+alter table usuario rename column nomeUsuario to apelidoUsuario;
+
+alter table usuario add column nomeCompletoUsuario varchar(60);
+
+-- o cadastro está recebendo usuarios que não passam na validação!!
