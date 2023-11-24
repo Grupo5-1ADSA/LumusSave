@@ -6,7 +6,7 @@ var ano = dataAtual.getFullYear();
 
 var dataFormatada = dia + '/' + mes + '/' + ano;
 
-document.getElementById('data-atual').textContent += dataFormatada;
+// document.getElementById('data-atual').textContent += dataFormatada;
 
 
 
@@ -16,98 +16,65 @@ function botaoEntrar() {
 
     if (email == "" || senha == "") {
         alert(`Preencha todos os campos!`)
-    }
+    } else {
 
-    aguardar();
 
-    console.log("FORM LOGIN: ", email);
-    console.log("FORM SENHA: ", senha);
 
-    fetch("http://localhost:3333/usuarios/autenticar", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            emailServer: email,
-            senhaServer: senha
+
+        console.log("FORM LOGIN: ", email);
+        console.log("FORM SENHA: ", senha);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: email,
+                senhaServer: senha
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.SENHA_USUARIO = json.senha;
+                    sessionStorage.APELIDO_USUARIO = json.apelido;
+                    sessionStorage.CELULAR_USUARIO = json.celular;
+
+                    setTimeout(function () {
+                        // window.location.href = "dashboards/DashGeral.html";
+                        window.location = "dashboards/DashGeral.html";
+
+                    }, 500); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                alert (`Os dados inseridos não foram encontrados`)
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    // console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
         })
-    }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!")
 
-        if (resposta.ok) {
-            console.log(resposta);
+        return false;
 
-            resposta.json().then(json => {
-                console.log(json);
-                console.log(JSON.stringify(json));
-                sessionStorage.EMAIL_USUARIO = json.email;
-                sessionStorage.NOME_USUARIO = json.nome;
-                sessionStorage.ID_USUARIO = json.id;
-                sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
-
-                setTimeout(function () {
-                    // window.location.href = "dashboards/DashGeral.html";
-                    window.location = "dashboards/DashGeral.html";
-
-                }, 1000); // apenas para exibir o loading
-
-            });
-
-        } else {
-
-            console.log("Houve um erro ao tentar realizar o login!");
-
-            resposta.text().then(texto => {
-                console.error(texto);
-                finalizarAguardar(texto);
-            });
+        function sumirMensagem() {
+            cardErro.style.display = "none"
         }
-
-    }).catch(function (erro) {
-        console.log(erro);
-    })
-
-    return false;
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
     }
 }
-
-
-// sessão
-// function validarSessao() {
-//     var email = sessionStorage.EMAIL_USUARIO;
-//     var nome = sessionStorage.NOME_USUARIO;
-
-//     var b_usuario = document.getElementById("b_usuario");
-
-//     if (email != null && nome != null) {
-//         b_usuario.innerHTML = nome;
-//     } else {
-//         window.location = "../login.html";
-//     }
-// }
-
-// function limparSessao() {
-//     sessionStorage.clear();
-//     window.location = "../login.html";
-// }
-
-// // carregamento (loading)
-// function aguardar() {
-//     var divAguardar = document.getElementById("div_aguardar");
-//     divAguardar.style.display = "flex";
-// }
-
-// function finalizarAguardar(texto) {
-//     var divAguardar = document.getElementById("div_aguardar");
-//     divAguardar.style.display = "none";
-
-//     var divErrosLogin = document.getElementById("div_erros_login");
-//     if (texto) {
-//         divErrosLogin.style.display = "flex";
-//         divErrosLogin.innerHTML = texto;
-//     }
-// }

@@ -1,13 +1,13 @@
 /* Fonte da navbar  */
 @font-face {
     font-family: 'roboto';
-    src: url("public/assets/fonts/Roboto/Roboto-Regular.ttf") format(opentype);
+    src: url("assets/fonts/Roboto/Roboto-Regular.ttf") format(opentype);
     font-weight: normal;
 }
 
 @font-face {
     font-family: 'exo';
-    src: url(public/assets/fonts/Exo_2/Exo2-VariableFont_wght.ttf) format(opentype);
+    src: url("assets/fonts/Exo_2/Exo2-VariableFont_wght.ttf") format(opentype);
     font-weight: normal;
 }
 
