@@ -28,7 +28,6 @@ function botaoCadastro() {
   else if (email.endsWith(`.com`) == false) {
     validacao.innerHTML += `Email incorreto! <br>`
   }
-
   else if (conf_email != email) {
     validacao.innerHTML += `Os emails não conferem.<br>`
   }
@@ -45,52 +44,49 @@ function botaoCadastro() {
     validacao.innerHTML += `Celular inválido!<br>`
   } else {
     alert(`Cadastro realizado com sucesso`);
-  }
 
-
-
-
-  // Enviando o valor da nova input
-  fetch("http://localhost:3333/usuarios/cadastrar", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      // crie um atributo que recebe o valor recuperado aqui
-      // Agora vá para o arquivo routes/usuario.js
-      nomeServer: nome,
-      apelidoServer: username,
-      emailServer: email,
-      senhaServer: senha,
-      telefoneServer: celular
-    }),
-  })
-    .then(function (resposta) {
-      console.log("resposta: ", resposta);
-
-      if (resposta.ok) {
-        cardErro.style.display = "block";
-
-        mensagem_erro.innerHTML =
-          "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-        setTimeout(() => {
-          window.location = "login.html";
-        }, "2000");
-
-        limparFormulario();
-        finalizarAguardar();
-      } else {
-        throw "Houve um erro ao tentar realizar o cadastro!";
-      }
+    // Enviando o valor da nova input
+    fetch("http://localhost:3333/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nome,
+        apelidoServer: username,
+        emailServer: email,
+        senhaServer: senha,
+        telefoneServer: celular
+      }),
     })
-    .catch(function (resposta) {
-      console.log(`#ERRO: ${resposta}`);
-      finalizarAguardar();
-    });
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
 
-  return false;
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
 }
 
 // function listar() {
