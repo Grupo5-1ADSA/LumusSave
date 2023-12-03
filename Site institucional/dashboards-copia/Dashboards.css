@@ -1,0 +1,433 @@
+/* Fonte da navbar  */
+@font-face {
+    font-family: 'roboto';
+    src: url(fonts/Roboto/Roboto-Regular.ttf) format(opentype);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'exo';
+    src: url("fonts/Exo_2/Exo2-VariableFont_wght.ttf") format(opentype);
+    font-weight: normal;
+}
+
+body{
+padding: 0;
+margin: 0;
+}
+
+.area{
+    width: 100vw;    
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1 2;
+    background-color: #30303A
+
+}
+
+a{
+    text-decoration: none;
+    color: #f1faff;
+    font-family: 'roboto';
+}
+
+.barlateral{
+height: 100vh;
+width: 16vw;
+background-color: #0A5C6C;
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: space-evenly;
+justify-self: left;
+grid-column: 1;
+}
+
+
+.usuario img{
+    width: 30px;
+    height: auto;
+    margin-right: 9px;
+    
+}
+
+.usuario{
+    margin-left: 20px;
+}
+
+.item_barLateral {
+    font-family: 'roboto';
+    color: #f1faff;
+}
+
+.graficos{
+width: 78vw;
+height: 88vh;
+background-color:#1A1A25;
+grid-column: 2;
+align-self: center;
+display: grid;
+grid-template-columns: 3;
+justify-content: space-around;
+border-radius: 5px;
+}
+
+h1{
+    font-family: 'exo';
+    color: #F0CA05;
+}
+
+.linhaDivisao{
+    height: 97.5%;
+    width: 1px;
+    background-color: #f1faff;
+    grid-column: 2;
+}
+
+/* Final base gráficos*/
+
+/* Grafico do momento */
+
+#div_atual{
+    margin: 0 25px 40px;
+    grid-column: 1;
+    height: 520px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#div_economiaGeral{
+    margin: 30px;
+    height: 520px;
+    width: 450px;
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.alerta_botao{
+    width: 200px;
+    height: 90px;
+    border-radius: 25%;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    position: relative;
+    left: 43px
+}
+
+.botao_Gdonuts
+
+/* Graficos locais */
+
+.div_graficoEsquerda{
+    margin: 40px 25px 40px;
+    grid-column: 1;
+    height: 520px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.div_graficoDireita{
+    margin: 66px 25px 40px;
+    grid-column: 3;
+    height: 520px;
+    width: 450px;
+}
+
+.titulos{
+    width: 100%;
+}
+
+/*  Dashboard AQUATECH */
+
+/* pagina mural */
+
+*,
+body {
+  font-family: "Exo 2", sans-serif;
+}
+
+.label-captura {
+  display: flex;
+  justify-content: center;
+}
+
+.dash-right .avisos {
+  width: 100%;
+  /* border: 3px solid pink; */
+  color: rgb(216, 216, 216);
+  font-family: "Exo 2", sans-serif;
+}
+
+.dash-right .avisos .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dash-right .avisos .container .div-form {
+  width: 100%;
+}
+
+.dash-right .avisos .container .div-form #form_postagem {
+  width: 100%;
+}
+
+.dash-right .avisos .div-form label {
+  width: 100%;
+}
+
+.dash-right .avisos .div-form input {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.dash-right .avisos .div-form textarea {
+  width: 100%;
+  /* color: #E6005A; */
+  border: 3px solid #e6005a;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.dash-right .avisos .div-form button {
+  cursor: pointer;
+  font-family: "Exo 2", sans-serif;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: white;
+  background-color: #e6005a;
+  width: 120px;
+}
+
+.publicacao-btn-editar {
+  cursor: pointer;
+  font-family: "Exo 2", sans-serif;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 5px 8px;
+  color: white;
+  background-color: #e6005a;
+  width: 80px;
+}
+
+.publicacao {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  border-bottom: 3px solid #e6005a;
+  padding: 20px;
+}
+
+.publicacao > *:not(:last-child) {
+  padding: 0 0 10px 0;
+}
+
+.div-results {
+  width: 100%;
+}
+
+.div-results .feed-container {
+  background-color: #212124;
+  border-radius: 5px;
+  margin-bottom: 80px;
+}
+
+.div-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.div-buttons > * {
+  margin-left: 30px;
+}
+
+/* pagina graficos */
+
+.dash-header {
+  background-color: #212124;
+}
+
+.dash {
+  width: 80%;
+  position: relative;
+  top: 0;
+  left: 20%;
+  background-color: #161618;
+  height: 100vh;
+  overflow: auto;
+}
+
+.regua {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.perigo-frio {
+  background-color: #5c6bc0;
+}
+
+.perigo-quente {
+  background-color: #ff7043;
+}
+
+.alerta-frio {
+  background-color: #42a5f5;
+}
+
+.alerta-quente {
+  background-color: #ffee58;
+}
+
+.ideal {
+  background-color: #9ccc65;
+}
+
+.item-regua {
+  padding: 5px;
+  width: 15%;
+  margin: 5px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 450px;
+  width: 100%;
+  align-items: center;
+  color: white;
+}
+
+.card {
+  margin: 2%;
+  width: 40%;
+  flex-wrap: wrap;
+  display: flex;
+  text-align: center;
+  height: 180px;
+  justify-content: right;
+  background-color: #212124;
+  font-size: 20px;
+}
+
+.card p {
+  margin: 0;
+  font-size: 50px;
+  font-weight: lighter;
+  text-align: left;
+}
+
+.cards h1 {
+  font-size: 22px;
+  width: 100%;
+  border-bottom: solid white 1px;
+  text-align: left;
+  font-weight: lighter;
+  margin: 20px;
+}
+
+.temperatura,
+.umidade {
+  margin: 5px;
+  margin-left: 20px;
+  width: 75%;
+}
+
+.cor-alerta {
+  width: 13%;
+  height: 30%;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.btns-dash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  padding: 0 30% 0 30%
+}
+
+.graph {
+  width: 80%;
+  margin: auto;
+  padding-top: 10px;
+}
+
+.tituloGraficos {
+  color: rgb(216, 216, 216);
+  display: flex;
+  justify-content: center;
+}
+
+.btn-chart {
+  font-family: "Exo 2", sans-serif;
+  border: 0;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: #e6005a;
+  background-color: white;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+.btn-pink {
+  color: white;
+  background-color: #e6005a;
+}
+
+.btn-white {
+  color: #e6005a;
+  background-color: white;
+
+}
+
+.label-captura {
+  height: 80px;
+}
+
+.display-none {
+  display: none;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.display-block {
+  display: block;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
