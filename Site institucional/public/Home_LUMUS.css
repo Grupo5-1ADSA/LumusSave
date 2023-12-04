@@ -54,7 +54,7 @@ a{
 }
 
 .header{
-    background: #0A5C6C;
+    background: #19384a;
     font-family: 'roboto';
     border-radius: 1px;
 }
@@ -105,7 +105,7 @@ a{
 
 .div_home {
 
-    background: #3F949C;
+    background: #6e8b9d;
     height: auto;
     display: grid;
     justify-content: center;
@@ -149,8 +149,14 @@ a{
     align-items: center;
     border: 0;
     border-radius: 20px;
-    background-color:#0A5C6C;
+    background-color:#426478;
     margin-bottom: 60px;
+    transition: all .3s;
+}
+.lema_lumus:hover button{
+  
+    background-color:#203d4e;
+   
     
 }
 
@@ -159,7 +165,7 @@ a{
     grid-column: 2;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: centrgb(57, 91, 110)
     
 }
 
@@ -176,7 +182,7 @@ a{
     display: grid;
     height: 100vh;
     width: 100%;
-    background-color: #0A5C6C;
+    background-color: #385b70;
     border-radius: 3px;
 }
 
@@ -230,11 +236,19 @@ align-items: center;
 
     width: 350px;
     height: 400px;
-    background-color: rgb(184, 241, 243);
+    background-color: #acbec8;
     border-radius: 10%;
     padding: 15px;
     margin: 7px 10px;
+    transition: all .3s;
     
+}
+
+.boxes_valores .box:hover{
+
+    
+    background-color: #cad3d9;
+ 
 }
 
 .boxes_valores h4{
@@ -249,7 +263,8 @@ font-size: 19px;
     margin: 0 0px 10px;
     display: grid;
     height: 100vh;
-    width: 100%;     
+    width: 100%;   
+    
 }
 
  .div_produtos h2{
@@ -262,9 +277,9 @@ font-size: 19px;
 }
 
 .div_produtos img {
-    width: 40vw;
-    height: 100%;
-    border-radius: 10px;
+    width: 45vw;
+    height: 650px;
+    border-radius: 20px;
 }
 
 #div_textoProduto {
@@ -279,7 +294,7 @@ font-size: 19px;
 }
 
 #fundoTexto{
-    background-color: rgba(10,92,108,0.4);
+    background-color: #48687d;
     padding: 18px;
     border-radius: 10px;
 }
@@ -289,7 +304,7 @@ font-size: 19px;
 #section_planos{
     height: 100vh;
     width: 100%;
-    background-color: #08292f;
+    background-color: #314e62;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -309,8 +324,9 @@ font-size: 19px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #F1FAFF;
+    background-color: #d6e0e6;
     width: 75%;
+    border-radius: 10px;
 
 }
 
@@ -360,11 +376,11 @@ font-size: 19px;
 
 .box_plano:hover{
  width: 203px;
- background-color: #F1FAFF;
+ background-color: #a1b7c3;
  opacity: 0.99;
  transition: 0.2s;
  cursor: pointer;
- box-shadow:  1px 1px 1px 1px #F0CA05;
+ box-shadow:  1px 1px 1px 1px #849eab;
 }
 
 .anual{
@@ -401,7 +417,7 @@ font-size: 19px;
 /* Footer */
 
 footer {
-    background-color: #0A5C6C;
+    background-color: #19384a;
     color: #fff;
     text-align: center;
     padding: 20px 20px 0 20px;
@@ -431,7 +447,7 @@ footer {
 }
 
 #contatos span {
-    color: #d0b30b;
+    color: #cbb222;
  
 }
 
@@ -451,7 +467,7 @@ footer {
 }
 
 #VoltarAoTopo button{
-    background-color: #F0CA05;
+    background-color: #cbb222;
     color: #F1FAFF;
     margin: 110px 0 30px 0;
     width: 150px;
@@ -461,6 +477,7 @@ footer {
     font-family: 'roboto';
     cursor: pointer;
     border-radius: 20px;
+    transition: all.3s;
 }
 
 #data-atual {
