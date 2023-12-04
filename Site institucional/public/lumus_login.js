@@ -9,7 +9,6 @@ var dataFormatada = dia + '/' + mes + '/' + ano;
 // document.getElementById('data-atual').textContent += dataFormatada;
 
 
-
 function botaoEntrar() {
     var email = input_email.value;
     var senha = input_senha.value;
@@ -17,10 +16,6 @@ function botaoEntrar() {
     if (email == "" || senha == "") {
         alert(`Preencha todos os campos!`)
     } else {
-
-
-
-
         console.log("FORM LOGIN: ", email);
         console.log("FORM SENHA: ", senha);
 
@@ -44,9 +39,7 @@ function botaoEntrar() {
                     console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.SENHA_USUARIO = json.senha;
-                    sessionStorage.APELIDO_USUARIO = json.apelido;
-                    sessionStorage.CELULAR_USUARIO = json.celular;
+                    sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
                         // window.location.href = "dashboards/DashGeral.html";

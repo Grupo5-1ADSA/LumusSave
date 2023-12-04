@@ -12,4 +12,12 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
+router.post("/obterDadosGrafico", function (req, res) {
+    usuarioController.obterDadosGrafico(req, res);
+});
+
+router.post("/atualizarGrafico", function (req, res) {
+    usuarioController.buscarMedidasEmTempoReal(req, res);
+});
+
 module.exports = router;

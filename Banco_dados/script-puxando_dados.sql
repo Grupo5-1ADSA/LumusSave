@@ -106,11 +106,23 @@ join ambienteEmpresa
     ON sensor.fkambiente_sensor = ambienteEmpresa.idAmbiente
 where dadosSensor.valorLux >= ambienteEmpresa.alertaVermelho;
 
--- alteraçoes maycon
 select * from usuario;
 
-alter table usuario rename column nomeUsuario to apelidoUsuario;
+select lux_adt as lux,
+                        momento,
+                        DATE_FORMAT(momento,'%H:%i:%s') as mome  from tarefaservidorlocal.sensor
+                    order by idSensor desc limit 7;
 
-alter table usuario add column nomeCompletoUsuario varchar(60);
+insert into tarefaservidorlocal.sensor values
+(119, 755, '2023-11-24 13:57:08');
 
--- o cadastro está recebendo usuarios que não passam na validação!!
+select * from tarefaservidorlocal.sensor;
+
+select * from dadosSensor;
+
+select valorLux as lux, dataHora, 
+	DATE_FORMAT(dataHora,'%H:%i:%s') as mome  from dadosSensor
+		order by idDados desc limit 7;
+        
+insert into dadosSensor(valorLux, dataHora) values
+(800, '2023-11-25 13:55:01');

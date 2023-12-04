@@ -40,7 +40,7 @@ align-items: center;
 flex-direction: column;
 justify-content: space-evenly;
 justify-self: left;
-grid-column: 1;
+
 }
 
 
@@ -150,4 +150,3 @@ h1{
 .titulos{
     width: 100%;
 }
-
