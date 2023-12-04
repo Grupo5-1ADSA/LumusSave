@@ -87,7 +87,7 @@ function fechar() {
             if(plano == `PlanoAnual`){
                 plano = `Plano anual R$240/Ano || <b> R$20/Mês </b>`;
             } else if(plano == `PlanoSemestral`){
-                plano = `Plano semestral R$324/Ano || <b> R$27/Mês </b> `
+                plano = `Plano semestral R$324/Ano || <b> R$25/Mês </b> `
             } else{
                 plano = `Plano Mensal R$360/Ano || <b> R$30/Mês </b>`
             }           
@@ -131,9 +131,9 @@ function fechar() {
                 <br>
                     Uma economia de <b>R$${economiaDiferenca.toFixed(1)}</b> por mês.
                 <br>
-                 Para adquiri-las você investirá cerca de R$${custoLampadaInteligente.toFixed(2)} porém, no máximo em <b>${parseInt(mesesLucro)} meses você começará a ter <u>lucro!</span></u>
+                 Para adquiri-las você investirá cerca de R$${custoLampadaInteligente.toFixed(2)}, entretanto, em até <b>${parseInt(mesesLucro)} meses você começará a ter <u>lucro!</span></u>
             </div>
-            <h3> Com nosso produto, você potencializa até 30% sua economia</h3>
+            <h3> Com nosso produto, você potencializa em até 30% a sua economia</h3>
             <div class="divisaoResultado"> Para mais informações, entre em contato conosco através dos meios abaixo</div>
             `;
 
