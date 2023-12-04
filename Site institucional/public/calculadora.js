@@ -87,7 +87,7 @@ function fechar() {
             if(plano == `PlanoAnual`){
                 plano = `Plano anual R$240/Ano || <b> R$20/Mês </b>`;
             } else if(plano == `PlanoSemestral`){
-                plano = `Plano semestral R$324/Ano || <b> R$25/Mês </b> `
+                plano = `Plano semestral R$300/Ano || <b> R$25/Mês </b> `
             } else{
                 plano = `Plano Mensal R$360/Ano || <b> R$30/Mês </b>`
             }           
