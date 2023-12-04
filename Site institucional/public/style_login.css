@@ -49,7 +49,7 @@ a {
 }
 
 .header {
-    background: #0A5C6C;
+    background: #19384a;
     font-family: 'roboto';
 
 }
@@ -63,7 +63,7 @@ a {
 .header .navbar {
     display: grid;
     grid-template-columns: 1 1 1;
-    color: #F1FAFF;
+    color: #226b92;
 }
 
 .div_esquerda {
@@ -103,14 +103,14 @@ a {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background: #3F949C;
+    background: #80aeb3;
     height: 750px;
 
 }
 
 h1 {
     font-family: 'exo';
-    color: #f0ca05;
+    color: #d6b83f;
 }
 
 
@@ -121,9 +121,9 @@ h1 {
 }
 
 .card_login {
-    width: 360px;
-    height: 330px;
-    background-color: #0A5C6C;
+    width: 400px;
+    height: 370px;
+    background-color: #608b8f;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -165,9 +165,16 @@ h1 {
     border-radius: 20px;
     font-size: 15px;
     color: #fff;
-    background-color: #3F949C;
+    background-color: #164a6b;
     width: 100px;
     height: 30px;
+    transition: all .3s;
+}
+
+.botao:hover {
+
+    background-color: #226b92;
+ 
 
 }
 
@@ -181,9 +188,9 @@ h1 {
 }
 
 .card_cadastro {
-    width: 800px;
+    width: 670px;
     height: 520px;
-    background-color: #0A5C6C;
+    background-color: #608b8f;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -199,7 +206,7 @@ h1 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background: #3F949C;
+    background: #90b4b7;
     height: 100vh;
 
 }
@@ -208,7 +215,7 @@ h1 {
     width: 1000px;
     height: 520px;
     display: flex;
-    background-color: #0A5C6C;
+    background-color: #426478;
     border-radius: 20px;
     align-items: center;
     justify-content: center;
@@ -288,11 +295,17 @@ h1 {
     border: 0;
     border-radius: 20px;
     font-size: 15px;
-    color: #fff;
-    background-color: #3F949C;
+    color: #dfdbdb;
+    background-color: #19384a;
     width: 100px;
     height: 30px;
 
+}
+
+.botao_calculadora:hover {
+
+    background-color: #213f51;
+  
 }
 
 .span_texto {
@@ -312,7 +325,7 @@ h1 {
     background-color: #fafcc9;
     position: fixed;
     opacity: 0.95;
-    border: #f0ca05 4px solid;
+    border: #c6a815 4px solid;
     text-align: justify;
     top: 90px
 }
@@ -407,7 +420,7 @@ h1 {
 /* Footer */
 
 footer {
-    background-color: #0A5C6C;
+    background-color: #19384a;
     color: #fff;
     text-align: center;
     padding: 20px 20px 0 20px;
@@ -470,10 +483,6 @@ footer {
     border-radius: 20px;
 }
 
-#data-atual {
-    margin: 0 20px;
-   color: #d1c1c1;
-}
 
 #contatos2 {
     text-align: left;
@@ -513,3 +522,4 @@ a img {
     width: 20px;
     margin: 0 10px;
 }
+
