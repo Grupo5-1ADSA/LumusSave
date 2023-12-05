@@ -14,6 +14,7 @@ alter table empresas auto_increment =100;
 create table usuario(
     idUsuario int primary key auto_increment,
     nomeUsuario varchar(90),
+    apelidoUsuario varchar(45),
     senhaUsuario varchar(45),
     emailUsuario varchar(100),
     telefoneUsuario char(11),
