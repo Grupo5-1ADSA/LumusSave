@@ -8,7 +8,7 @@ idEmpresa int primary key auto_increment,
 nomeEmpresa varchar(45),
 CNPJ char(18),
 segmento varchar(45),
-endereco varchar(100)
+endereco varchar(200)
 ) auto_increment = 100; 
 
 
