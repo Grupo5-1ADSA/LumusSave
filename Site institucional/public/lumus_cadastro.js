@@ -6,7 +6,7 @@ var ano = dataAtual.getFullYear();
 
 var dataFormatada = dia + '/' + mes + '/' + ano;
 
-document.getElementById('data-atual').textContent += dataFormatada;
+// document.getElementById('data-atual').textContent += dataFormatada;
 
 
 
@@ -43,8 +43,6 @@ function botaoCadastro() {
   else if (celular.length != 11) {
     validacao.innerHTML += `Celular inválido!<br>`
   } else {
-    alert(`Cadastro realizado com sucesso`);
-
     // Enviando o valor da nova input
     fetch("http://localhost:3333/usuarios/cadastrar", {
       method: "POST",
@@ -65,16 +63,10 @@ function botaoCadastro() {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          cardErro.style.display = "block";
+          alert(
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...");
 
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-          setTimeout(() => {
-            window.location = "login.html";
-          }, "2000");
-
-          ;
+            window.location = "login.html"
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
@@ -86,25 +78,4 @@ function botaoCadastro() {
     return false;
   }
 }
-
-// function listar() {
-//   fetch("/empresas/listar", {
-//     method: "GET",
-//   })
-//     .then(function (resposta) {
-//       resposta.json().then((empresas) => {
-//         empresas.forEach((empresa) => {
-//           listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
-//         });
-//       });
-//     })
-//     .catch(function (resposta) {
-//       console.log(`#ERRO: ${resposta}`);
-//     });
-// }
-
-function sumirMensagem() {
-  cardErro.style.display = "none";
-}
-
 

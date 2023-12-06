@@ -43,7 +43,7 @@ function botaoEntrar() {
 
                     setTimeout(function () {
                         // window.location.href = "dashboards/DashGeral.html";
-                        window.location = "dashboards/DashGeral.html";
+                        window.location = "dashboards/dashJulia.html";
 
                     }, 500); // apenas para exibir o loading
 

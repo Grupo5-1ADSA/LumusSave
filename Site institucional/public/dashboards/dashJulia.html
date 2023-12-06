@@ -16,40 +16,44 @@
         <!-- barra lateral -->
         <div class="barlateral">
 
-            <div class="ambiente"><a href="../index.html"><img src="../assets\imgs\logo_lumus.png" alt="logo_lumus"></a>
-            </div>
+            <div class="item_barLateral"><a href="../index.html"><img src="../assets/imgs/logo_lumus.png"
+                        alt="logo_lumus"></a></div>
 
             <div id="recebe_usuario" class="item_barLateral usuario"><img src="../assets/imgs/menina.png">Olá,
                 Usuario!<br> Qual ambiente será
                 visualizado?</div>
 
-            <div class="ambiente"><a href="dashJulia.html">Sala Julia</a></div>
-
-            <div class="ambiente"><a href="dashAnna.html">Sala Anna</a></div>
-
-            <div class="ambiente"><a href="dashSalaReuniao.html">Sala de Reunião</a></div>
-
-            <div class="ambiente"><a href="dashRefeitorio.html"><u style="color: rgb(255, 223, 141);">Refeitório</u></a>
+            <div class="item_barLateral"><a href="dashJulia.html"><u style="color: rgb(255, 223, 141);">Sala
+                        Julia</u></a>
             </div>
 
-            <div class="ambiente"><a href="dashsalaFernando.html">Sala Fernando</a></div>
+            <div class="item_barLateral"><a href="dashAnna.html">Sala Anna</a></div>
+
+            <div class="item_barLateral"><a href="dashSalaReuniao.html">Sala de Reunião</a></div>
+
+            <div class="item_barLateral"><a href="dashRefeitorio.html">Refeitório</a></div>
+
+            <div class="item_barLateral"><a href="dashsalaFernando.html">Sala Fernando</a></div>
 
         </div>
 
         <!-- Area dos graficos: -->
+
         <div class="graficos">
-            <div class="div_graficoEsquerda">
-                <div class="titulos">
-                    <h1> Neste momento </h1>
-                    <canvas id="grafico_linhas"></canvas>
-                </div>             
+
+            <div id="div_atual">
+                <h1> Neste momento </h1>
+                <canvas id="grafico_linhas"></canvas>
             </div>
             <div class="linhaDivisao"></div>
-            <div class="div_graficoDireita">
-                <h1>Uso do dia</h1>
+            <div id="div_economiaGeral">
+                <h1>Média de consumo diário</h1>
                 <canvas id="grafico_linhas2"></canvas>
+
             </div>
+
             <div id="alerta"></div>
+
         </div>
     </div>
     <!-- Start of lumussense Zendesk Widget script -->
@@ -58,25 +62,40 @@
 </body>
 
 </html>
-
 <script>
-     recebe_usuario.innerHTML = `Olá, ${sessionStorage.NOME_USUARIO}!<br> Qual ambiente será visualizado?`;
+    recebe_usuario.innerHTML = `Olá, ${sessionStorage.NOME_USUARIO}!<br> Qual ambiente será visualizado?`;
 
     const ctx2 = document.getElementById('grafico_linhas2');
 
     new Chart(ctx2, {
-        type: 'line',
+        type: 'bar',
         data: {
-            labels: ['9h', '10h', '11h', '12h', '13h', '14h', '15h', '16h', '17h', '18h', '19h', '20h', '21h'],
-            datasets: [{
-                label: 'LUX',
-                backgroundColor: '#F0CA05',
-                borderColor: '#FFDE59',
-                data: [70, 100, 800, 850, 850, 810, 642, 90, 80, 70, 850, 870, 10],
-                borderWidth: 1.8,
-                pointRadius: 4
-            }]
+            labels: ['1', '2', '3', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'],
+            datasets: [
+                {
+                    label: 'Dia',
+                    data: [300, 460, 480, 350, 300, 300, 280, 220, 280, 250, 320, 220, 250, 170, 190, 180],
+                    backgroundColor: '#FFDE59',
+                    stack: 'Stack 0',
+                    borderWidth: '100px'
+                },
+                {
+                    label: 'Noite',
+                    data: [510, 560, 520, 450, 450, 510, 500, 620, 540, 580, 550, 600, 320, 360, 260, 300],
+                    backgroundColor: '#0000ff',
+                    stack: 'Stack 0',
+                    borderWidth: '100px'
+                },
+                {
+                    label: 'Economia',
+                    data: [190, 0, 0, 200, 250, 190, 220, 160, 180, 170, 150, 180, 430, 470, 550, 520],
+                    backgroundColor: 'rgb(70,210,60)',
+                    stack: 'Stack 0',
+                    borderWidth: '100px'
+                },
+            ]
         },
+
         options: {
             plugins: {
                 legend: {
@@ -86,14 +105,14 @@
                 }
             },
             scales: {
-
                 x: {
                     grid: {
                         color: '#44595B'
                     },
                     ticks: {
                         color: '#CFDEF1'
-                    }
+                    },
+                    stacked: true
                 },
                 y: {
                     beginAtZero: true,
@@ -102,12 +121,14 @@
                     },
                     ticks: {
                         color: '#CFDEF1'
-                    }
+                    },
+                    stacked: true
                 }
             }
         }
     });
- // O gráfico é construído com três funções:
+
+    // O gráfico é construído com três funções:
     // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
     // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
     // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
@@ -238,7 +259,7 @@
                         dados.labels.push(novoRegistro[0].mome); // incluir um novo momento
 
                         dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                        dados.datasets[0].data.push(novoRegistro[0].lux * 1.15); // incluir uma nova medida de umidade
+                        dados.datasets[0].data.push(novoRegistro[0].lux); // incluir uma nova medida de umidade
 
                         if (novoRegistro[0].lux <= 100) {
                             alerta.innerHTML = `A luz está desligada`
