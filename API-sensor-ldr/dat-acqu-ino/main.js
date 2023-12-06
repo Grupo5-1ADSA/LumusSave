@@ -2,11 +2,11 @@
 const serialport = require('serialport');
 const express = require('express');
 const mysql = require('mysql2');
-const sql = require('mssql');
+//const sql = require('mssql');
 
 // não altere!
 const SERIAL_BAUD_RATE = 9600;
-const SERVIDOR_PORTA = 333;
+const SERVIDOR_PORTA = 3333;
 
 // configure a linha abaixo caso queira que os dados capturados sejam inseridos no banco de dados.
 // false -> nao insere
@@ -33,7 +33,7 @@ const serial = async (
                 // altere!
                 // CREDENCIAIS DO BANCO - MYSQL WORKBENCH
                 host: '10.18.34.76',
-                user: 'usuarioRemoto',
+                user: 'usuarioRemoto2',
                 password: '1234',
                 database: 'lumussave'
             }
@@ -105,7 +105,7 @@ const serial = async (
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> você deve ter o aquario de id 1 cadastrado.
                 await poolBancoDados.execute(
-                    `INSERT INTO dadosSensor (valorLux, dataHora) VALUES ('${lux_adt}', CURRENT_TIMESTAMP)`
+                    `INSERT INTO dadosSensor (valorLux, dataHora, fkSensor) VALUES ('${lux_adt}', CURRENT_TIMESTAMP, 1)`
                 );
                 console.log("valores inseridos no banco: ", lux_adt)
 
