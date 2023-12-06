@@ -1,3 +1,7 @@
+
+ /* STYLE DO LOGIN, CADASTRO E CALCULADORA */
+
+
 /* Fonte da navbar  */
 @font-face {
     font-family: 'roboto';
@@ -103,14 +107,14 @@ a {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background: #80aeb3;
+    background: rgb(97, 166, 190);
     height: 750px;
 
 }
 
 h1 {
     font-family: 'exo';
-    color: #d6b83f;
+    color: yellow;
 }
 
 
@@ -121,9 +125,10 @@ h1 {
 }
 
 .card_login {
+    border: 2px solid yellow;
     width: 400px;
     height: 370px;
-    background-color: #608b8f;
+    background-color: #426478;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -164,6 +169,7 @@ h1 {
     border: 0;
     border-radius: 20px;
     font-size: 15px;
+    font-weight: bold;
     color: #fff;
     background-color: #164a6b;
     width: 100px;
@@ -188,9 +194,10 @@ h1 {
 }
 
 .card_cadastro {
+    border: 2px solid yellow;
     width: 670px;
     height: 520px;
-    background-color: #608b8f;
+    background-color: #426478;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -206,12 +213,13 @@ h1 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background: #90b4b7;
+    background: rgb(97, 166, 190);
     height: 100vh;
 
 }
 
 .card_calculadora {
+    border: 3px solid yellow;
     width: 1000px;
     height: 520px;
     display: flex;
@@ -382,14 +390,12 @@ h1 {
 }
 
 #div_validacao_login {
-    width: 120px;
-    font-weight: bold;
+    width: 140px;
     color: red;
 }
 
 .forms #validacao {
     font-size: 20px;
-    font-weight: bold;
     color: red;
 }
 
@@ -413,7 +419,7 @@ h1 {
 
 #validacao {
     grid-row: 3;
-    width: 200px;
+    width: 160px;
     height: 50px;
 }
 
