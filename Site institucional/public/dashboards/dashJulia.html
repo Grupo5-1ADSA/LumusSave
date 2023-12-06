@@ -19,15 +19,15 @@
             <div class="item_barLateral"><a href="../index.html"><img src="../assets/imgs/logo_lumus.png"
                         alt="logo_lumus"></a></div>
 
-            <div class="item_barLateral usuario"><img src="../assets/imgs/menina.png">Olá, Anna!<br> Qual ambiente será
+            <div id="recebe_usuario" class="item_barLateral usuario"><img src="../assets/imgs/menina.png">Olá,
+                Usuario!<br> Qual ambiente será
                 visualizado?</div>
 
-            <div class="item_barLateral"><a href="DashGeral.html"><u style="color: rgb(255, 223, 141);">Geral</u></a>
+            <div class="item_barLateral"><a href="dashJulia.html"><u style="color: rgb(255, 223, 141);">Sala
+                        Julia</u></a>
             </div>
 
-            <div class="ambiente"><a href="dashMarketing.html">Sala Marketing</a></div>
-
-            <div class="item_barLateral"><a href="dashHarvey.html">Sala Harvey</a></div>
+            <div class="item_barLateral"><a href="dashAnna.html">Sala Anna</a></div>
 
             <div class="item_barLateral"><a href="dashSalaReuniao.html">Sala de Reunião</a></div>
 
@@ -42,9 +42,8 @@
         <div class="graficos">
 
             <div id="div_atual">
-                <h1 id="teste"> Neste momento </h1>
-                <canvas id="grafico_barrasLaterais"></canvas>
-
+                <h1> Neste momento </h1>
+                <canvas id="grafico_linhas"></canvas>
             </div>
             <div class="linhaDivisao"></div>
             <div id="div_economiaGeral">
@@ -53,7 +52,7 @@
 
             </div>
 
-            <div id="alerta"> </div>
+            <div id="alerta"></div>
 
         </div>
     </div>
@@ -61,6 +60,7 @@
 
 </html>
 <script>
+    recebe_usuario.innerHTML = `Olá, ${sessionStorage.NOME_USUARIO}!<br> Qual ambiente será visualizado?`;
 
     const ctx2 = document.getElementById('grafico_linhas2');
 
@@ -71,21 +71,21 @@
             datasets: [
                 {
                     label: 'Dia',
-                    data: [300, 460, 480, 350, 300, 260, 280, 220, 280, 250, 250, 220, 200, 170, 190, 180],
+                    data: [300, 460, 480, 350, 300, 300, 280, 220, 280, 250, 320, 220, 250, 170, 190, 180],
                     backgroundColor: '#FFDE59',
                     stack: 'Stack 0',
                     borderWidth: '100px'
                 },
                 {
                     label: 'Noite',
-                    data: [510, 560, 520, 450, 450, 450, 500, 620, 540, 580, 450, 600, 570, 660, 260, 300],
+                    data: [510, 560, 520, 450, 450, 510, 500, 620, 540, 580, 550, 600, 320, 360, 260, 300],
                     backgroundColor: '#0000ff',
                     stack: 'Stack 0',
                     borderWidth: '100px'
                 },
                 {
                     label: 'Economia',
-                    data: [190, 0, 0, 200, 250, 290, 220, 160, 180, 170, 300, 180, 230, 170, 550, 520],
+                    data: [190, 0, 0, 200, 250, 190, 220, 160, 180, 170, 150, 180, 430, 470, 550, 520],
                     backgroundColor: 'rgb(70,210,60)',
                     stack: 'Stack 0',
                     borderWidth: '100px'
@@ -215,7 +215,7 @@
 
         // Adicionando gráfico criado em div na tela
         let myChart = new Chart(
-            document.getElementById(`grafico_barrasLaterais`),
+            document.getElementById(`grafico_linhas`),
             config
         );
 
@@ -258,13 +258,22 @@
                         dados.datasets[0].data.shift();  // apagar o primeiro de umidade
                         dados.datasets[0].data.push(novoRegistro[0].lux); // incluir uma nova medida de umidade
 
-                        if (novoRegistro[0].lux < 550 || novoRegistro[0].lux > 850) {
+                        if (novoRegistro[0].lux <= 100) {
+                            alerta.innerHTML = `A luz está desligada`
+                            document.querySelector('#alerta').classList.add(`apagada`);
+
+                            document.querySelector('#alerta').classList.remove(`amarelo`);
+                            document.querySelector('#alerta').classList.remove(`vermelho`);
+                            document.querySelector('#alerta').classList.remove(`verde`);
+
+                        } else if (novoRegistro[0].lux < 550 || novoRegistro[0].lux > 850) {
                             alerta.innerHTML = `A luminosidade está próximo ao limite`
 
                             document.querySelector('#alerta').classList.add(`amarelo`);
 
                             document.querySelector('#alerta').classList.remove(`vermelho`);
                             document.querySelector('#alerta').classList.remove(`apagada`);
+                            document.querySelector('#alerta').classList.remove(`verde`);
 
                             if (novoRegistro[0].lux < 400) {
                                 alerta.innerHTML = `A luminosidade está abaixo do recomendado!`
@@ -278,14 +287,6 @@
                                 document.querySelector('#alerta').classList.remove(`amarelo`);
                                 document.querySelector('#alerta').classList.add(`vermelho`);
                             }
-                        } else if (novoRegistro[0].lux <= 100) {
-                            alerta.innerHTML = `A luz está desligada`
-
-                            document.querySelector('#alerta').classList.remove(`amarelo`);
-                            document.querySelector('#alerta').classList.remove(`vermelho`);
-
-                            document.querySelector('#alerta').classList.add(`apagada`);
-                                   
                         } else {
                             document.querySelector('#alerta').classList.remove(`amarelo`);
                             document.querySelector('#alerta').classList.remove(`vermelho`);
