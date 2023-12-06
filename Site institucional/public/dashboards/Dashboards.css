@@ -150,3 +150,36 @@ h1{
 .titulos{
     width: 100%;
 }
+
+#alerta{
+    width: 310px;
+    height: 85px;
+    position: absolute;
+    align-self: flex-end;
+    justify-self: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    margin: 50px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.amarelo{
+    background-color: #F0CA05;
+}
+
+.vermelho{
+    background-color: red;
+    color: #f1faff;
+}
+
+.apagada{
+    background-color: transparent;
+    color: #f1faff;
+}
+
+.verde{
+    background-color: #46d23c;
+}

@@ -96,11 +96,11 @@
 
         console.log(`Cheguei no controller`)
 
-        const limite_linhas = 7;
+        const limite_linhas = 8;
 
         console.log(`Recuperando os ultimos ${limite_linhas} dados`);
 
-            usuarioModel.obterDadosGrafico({limite_linhas})
+            usuarioModel.obterDadosGrafico(limite_linhas)
             .then(function (resultado) {
                 if (resultado.length > 0) {
                     res.status(200).json(resultado);

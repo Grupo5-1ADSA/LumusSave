@@ -28,10 +28,10 @@ function obterDadosGrafico(limite_linhas) {
 
     
  if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select lux_adt as lux,
-        momento,
-        DATE_FORMAT(momento,'%H:%i:%s') as mome  from tarefaservidorlocal.sensor
-    order by idSensor desc limit ${limite_linhas};`;
+        instrucaoSql = `select valorLux as lux,
+        dataHora,
+        DATE_FORMAT(dataHora,'%H:%i:%s') as mome  from dadosSensor
+    order by idDados desc limit ${limite_linhas};`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -44,11 +44,10 @@ function obterDadosGrafico(limite_linhas) {
 function buscarMedidasEmTempoReal() {
 
     instrucaoSql = ''
-        instrucaoSql = `select  
-        lux_adt as lux,
-                        DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico  
-                        from tarefaservidorlocal.sensor 
-                    order by idSensor desc limit 1`;
+        instrucaoSql = `
+        select valorLux as lux, dataHora, 
+	DATE_FORMAT(dataHora,'%H:%i:%s') as mome  from dadosSensor
+		order by idDados desc limit 1;`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

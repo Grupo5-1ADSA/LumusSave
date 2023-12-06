@@ -42,7 +42,7 @@
         <div class="graficos">
 
             <div id="div_atual">
-                <h1> Neste momento </h1>
+                <h1 id="teste"> Neste momento </h1>
                 <canvas id="grafico_barrasLaterais"></canvas>
 
             </div>
@@ -53,6 +53,7 @@
 
             </div>
 
+            <div id="alerta"> </div>
 
         </div>
     </div>
@@ -60,51 +61,6 @@
 
 </html>
 <script>
-    // const ctx = document.getElementById('grafico_barrasLaterais');
-
-    // new Chart(ctx, {
-    //     type: 'bar',
-    //     data: {
-    //         labels: ['Harvey', 'Presidência', 'Refeitório', 'Fernando', 'Reunião'],
-    //         datasets: [{
-    //             label: 'LUX(%)',
-    //             backgroundColor: '#FFDE59',
-    //             data: [45, 98, 68, 78, 78],
-
-    //             borderWidth: 2
-    //         }]
-    //     },
-    //     options: {
-    //         indexAxis: 'y',
-    //         plugins: {
-    //             legend: {
-    //                 labels: {
-    //                     color: '#CFDEF1'
-    //                 }
-    //             }
-    //         },
-    //         scales: {
-    //             x: {
-    //                 grid: {
-    //                     color: '#44595B'
-    //                 },
-    //                 ticks: {
-    //                     color: '#CFDEF1'
-    //                 }
-
-    //             },
-    //             y: {
-    //                 beginAtZero: true,
-    //                 grid: {
-    //                     color: '#44595B'
-    //                 },
-    //                 ticks: {
-    //                     color: '#CFDEF1'
-    //                 }
-    //             }
-    //         }
-    //     }
-    // });
 
     const ctx2 = document.getElementById('grafico_linhas2');
 
@@ -302,6 +258,43 @@
                         dados.datasets[0].data.shift();  // apagar o primeiro de umidade
                         dados.datasets[0].data.push(novoRegistro[0].lux); // incluir uma nova medida de umidade
 
+                        if (novoRegistro[0].lux < 550 || novoRegistro[0].lux > 850) {
+                            alerta.innerHTML = `A luminosidade está próximo ao limite`
+
+                            document.querySelector('#alerta').classList.add(`amarelo`);
+
+                            document.querySelector('#alerta').classList.remove(`vermelho`);
+                            document.querySelector('#alerta').classList.remove(`apagada`);
+
+                            if (novoRegistro[0].lux < 400) {
+                                alerta.innerHTML = `A luminosidade está abaixo do recomendado!`
+
+                                document.querySelector('#alerta').classList.remove(`amarelo`);
+                                document.querySelector('#alerta').classList.add(`vermelho`);
+
+                            } else if (novoRegistro[0].lux > 950) {
+                                alerta.innerHTML = `A luminosidade está acima do recomendado!`
+
+                                document.querySelector('#alerta').classList.remove(`amarelo`);
+                                document.querySelector('#alerta').classList.add(`vermelho`);
+                            }
+                        } else if (novoRegistro[0].lux <= 100) {
+                            alerta.innerHTML = `A luz está desligada`
+
+                            document.querySelector('#alerta').classList.remove(`amarelo`);
+                            document.querySelector('#alerta').classList.remove(`vermelho`);
+
+                            document.querySelector('#alerta').classList.add(`apagada`);
+                                   
+                        } else {
+                            document.querySelector('#alerta').classList.remove(`amarelo`);
+                            document.querySelector('#alerta').classList.remove(`vermelho`);
+                            document.querySelector('#alerta').classList.remove(`apagada`);
+
+                            document.querySelector('#alerta').classList.add(`verde`);
+
+                            alerta.innerHTML = `Seu consumo está adequado`
+                        }
                         myChart.update();
                     }
 
